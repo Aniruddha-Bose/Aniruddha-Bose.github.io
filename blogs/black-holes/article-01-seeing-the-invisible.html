@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeing the Invisible: How We Photographed a Black Hole | Aniruddha's Science Explorer</title>
+    <meta name="description" content="For two centuries, black holes were invisible — predicted by maths but never seen. Then we built a telescope the size of Earth and photographed one. This is the story of how we did it, and what the images revealed.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Franklin:wght@300;400;500;600;700;800&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink:        #1a1a1a;
+            --ink-mid:    #4a4a4a;
+            --ink-soft:   #757575;
+            --deep-space: #0d1b2a;
+            --nebula:     #1b2838;
+            --cosmic:     #6c63ff;
+            --cosmic-lt:  #9d97ff;
+            --stellar:    #ff6b35;
+            --gold:       #ffd700;
+            --hawking:    #00b4d8;
+            --rule:       #e0e0e0;
+            --paper:      #fafafa;
+            --white:      #ffffff;
+            --eht:        #e65100;
+            --nasa:       #0b3d91;
+            --isro:       #ff9933;
+            --hubble:     #1565c0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ── Sticky Header ── */
+        .site-header {
+            position: sticky; top: 0; z-index: 200;
+            background: rgba(255,255,255,0.97);
+            border-bottom: 1px solid var(--rule);
+            backdrop-filter: blur(8px);
+        }
+        .hrow {
+            width: 90%; max-width: 1160px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 0;
+        }
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px; font-weight: 900;
+            color: var(--deep-space); letter-spacing: -0.4px; text-decoration: none;
+        }
+        .brand-sub {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 10px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1.2px;
+            color: var(--cosmic); display: block; margin-top: -2px;
+        }
+        .site-nav {
+            display: flex; gap: 28px;
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 13px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .site-nav a { color: var(--ink-mid); text-decoration: none; transition: color .2s; }
+        .site-nav a:hover { color: var(--cosmic); }
+
+        /* ── Article Hero ── */
+        .hero {
+            width: 90%; max-width: 1160px;
+            margin: 52px auto 0;
+            padding-bottom: 36px;
+            border-bottom: 3px solid var(--cosmic);
+        }
+        .kicker {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 11px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 1.4px;
+            color: var(--cosmic); margin-bottom: 18px;
+        }
+        .kicker::after {
+            content: ''; width: 36px; height: 2px;
+            background: var(--cosmic); display: block;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 50px);
+            font-weight: 900; line-height: 1.08;
+            letter-spacing: -0.8px; color: var(--ink);
+            margin-bottom: 18px;
+        }
+        .deck {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: clamp(15px, 1.4vw, 17px); line-height: 1.55;
+            color: var(--ink-mid); max-width: 800px; margin-bottom: 28px;
+        }
+        .byline-row {
+            display: flex; align-items: center;
+            justify-content: space-between; flex-wrap: wrap; gap: 14px;
+        }
+        .byline-left { display: flex; align-items: center; gap: 12px; }
+        .avatar {
+            width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+            background: linear-gradient(135deg, var(--cosmic), var(--deep-space));
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Libre Franklin', sans-serif;
+            font-weight: 800; font-size: 16px; color: #fff;
+        }
+        .byline-name {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 14px; font-weight: 700; color: var(--ink);
+        }
+        .byline-meta {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 12px; color: var(--ink-soft); margin-top: 2px;
+        }
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .tag {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.6px;
+            padding: 4px 11px; border: 1.5px solid var(--rule);
+            border-radius: 3px; color: var(--ink-mid);
+        }
+
+        /* ── Numbers Strip ── */
+        .stats-strip {
+            background: var(--deep-space); padding: 24px 0; margin: 40px 0;
+        }
+        .stats-strip .hrow {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+        }
+        .snum {
+            text-align: center; padding: 0 12px;
+            border-right: 1px solid rgba(255,255,255,0.12);
+        }
+        .snum:last-child { border-right: none; }
+        .sval {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px; font-weight: 900;
+            color: var(--gold); display: block; margin-bottom: 4px;
+        }
+        .slbl {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 11px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.8px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* ── Body ── */
+        .body {
+            width: 90%; max-width: 1160px;
+            margin: 0 auto 56px;
+        }
+        p { margin-bottom: 20px; font-size: 20px; line-height: 1.7; }
+        .lead {
+            font-size: 22px; line-height: 1.52; margin-bottom: 28px;
+        }
+        .lead::first-letter {
+            float: left;
+            font-family: 'Playfair Display', serif;
+            font-size: 66px; line-height: 52px;
+            padding: 6px 10px 0 0; font-weight: 900; color: var(--cosmic);
+        }
+        .sec-label {
+            display: block;
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 10px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 1.4px;
+            color: var(--cosmic); margin-bottom: 5px; margin-top: 44px;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px; font-weight: 700; color: var(--deep-space);
+            line-height: 1.22; margin-bottom: 0;
+        }
+
+        /* ── Side-by-Side Panel ── */
+        .panel {
+            display: flex; align-items: stretch;
+            border: 1px solid var(--rule); border-radius: 6px;
+            overflow: hidden; margin: 22px 0 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            background: var(--white);
+        }
+        .panel.p-cosmic  { border-left: 4px solid var(--cosmic); }
+        .panel.p-eht     { border-left: 4px solid var(--eht); }
+        .panel.p-nasa    { border-left: 4px solid var(--nasa); }
+        .panel.p-isro    { border-left: 4px solid var(--isro); }
+        .panel.p-hubble  { border-left: 4px solid var(--hubble); }
+
+        .panel.panel-reverse .p-img { border-right: none; border-left: 1px solid var(--rule); }
+
+        .p-img {
+            flex: 0 0 42%; background: var(--deep-space);
+            border-right: 1px solid var(--rule);
+            padding: 0;
+            display: flex; flex-direction: column;
+            position: relative; overflow: hidden;
+        }
+        .p-img img {
+            width: 100%; height: 100%;
+            object-fit: cover; display: block;
+            min-height: 280px;
+        }
+        .p-img-credit {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            padding: 28px 14px 10px;
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 10px; font-weight: 600;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 0.3px;
+        }
+
+        .p-text {
+            flex: 1; padding: 22px 24px;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .p-text p { margin-bottom: 13px; font-size: 18.5px; }
+        .p-text p:last-child { margin-bottom: 0; }
+
+        /* ── Mind-Blown Callout ── */
+        .callout {
+            background: #ede7f6;
+            border-left: 4px solid var(--cosmic);
+            padding: 18px 22px; margin: 32px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .callout-lbl {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 10px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 1.2px;
+            color: var(--cosmic); margin-bottom: 7px;
+        }
+        .callout p { font-size: 18px; margin: 0; line-height: 1.62; color: var(--ink-mid); }
+
+        /* ── Science Explorer Intelligence ── */
+        .intelligence {
+            width: 90%; max-width: 1160px;
+            margin: 0 auto 56px;
+        }
+        .intel-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 24px; margin-top: 22px;
+        }
+        .scenario-card {
+            border: 1px solid var(--rule);
+            border-radius: 8px; overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            background: var(--white);
+        }
+        .scenario-header {
+            color: #fff;
+            padding: 18px 22px;
+        }
+        .scenario-header.h-stellar { background: var(--deep-space); }
+        .scenario-header.h-super   { background: var(--cosmic); }
+        .scenario-badge {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 10px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: var(--gold); margin-bottom: 6px;
+        }
+        .scenario-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px; font-weight: 900; color: #fff;
+            line-height: 1.25;
+        }
+        .scenario-body {
+            padding: 20px 22px;
+        }
+        .scenario-body ul {
+            list-style: none; padding: 0;
+        }
+        .scenario-body li {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 13.5px; line-height: 1.6;
+            padding: 8px 0 8px 22px;
+            position: relative;
+            border-bottom: 1px solid var(--rule);
+        }
+        .scenario-body li:last-child { border-bottom: none; }
+        .scenario-body li::before {
+            content: '';
+            position: absolute; left: 0; top: 14px;
+            width: 8px; height: 8px; border-radius: 50%;
+        }
+        .scenario-a li::before { background: var(--cosmic); }
+        .scenario-b li::before { background: var(--stellar); }
+
+        /* ── CTA ── */
+        .cta {
+            background: linear-gradient(135deg, var(--deep-space), #1a1a40);
+            color: #fff;
+            border-radius: 8px; padding: 42px 44px;
+            margin: 44px 0; position: relative; overflow: hidden;
+        }
+        .cta::after {
+            content: '\2734';
+            position: absolute; right: 20px; bottom: -10px;
+            font-size: 180px;
+            color: rgba(255,255,255,0.03); line-height: 1;
+            pointer-events: none;
+        }
+        .cta-eye {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 11px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 1.4px;
+            color: var(--gold); margin-bottom: 12px;
+        }
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px; font-weight: 900; color: #fff; margin-bottom: 14px;
+        }
+        .cta p {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 15px; line-height: 1.75;
+            color: rgba(255,255,255,0.88); margin-bottom: 22px;
+        }
+        .cta-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+        .btn-primary {
+            display: inline-block; padding: 13px 28px;
+            background: var(--cosmic); color: #fff;
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 14px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            border-radius: 4px; text-decoration: none;
+            transition: background .2s, color .2s;
+        }
+        .btn-primary:hover { background: var(--gold); color: var(--deep-space); }
+        .btn-outline {
+            display: inline-block; padding: 13px 28px;
+            border: 1.5px solid rgba(255,255,255,0.45);
+            color: rgba(255,255,255,0.88);
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 14px; font-weight: 600;
+            border-radius: 4px; text-decoration: none;
+            transition: border-color .2s, color .2s;
+        }
+        .btn-outline:hover { border-color: #fff; color: #fff; }
+        .cta-sub {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 12px; color: rgba(255,255,255,0.5);
+            margin-top: 14px; margin-bottom: 0;
+        }
+        .cta blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px; font-style: italic;
+            color: var(--cosmic-lt); border-left: 3px solid var(--cosmic);
+            padding-left: 18px; margin: 24px 0 28px;
+            line-height: 1.5;
+        }
+        .cta blockquote cite {
+            display: block; margin-top: 8px;
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 12px; font-style: normal;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 840px) {
+            .site-nav { display: none; }
+            .hero, .body, .intelligence { width: 92%; }
+            h1 { font-size: 26px; }
+            .stats-strip .hrow { grid-template-columns: repeat(2, 1fr); }
+            .snum { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); padding: 10px 0; }
+            .snum:last-child, .snum:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+            .panel { flex-direction: column; }
+            .panel.panel-reverse { flex-direction: column; }
+            .panel.panel-reverse .p-img { border-left: none; border-bottom: 1px solid var(--rule); }
+            .p-img { flex: none; border-right: none; border-bottom: 1px solid var(--rule); }
+            .p-img img { min-height: 200px; max-height: 280px; }
+            .cta { padding: 26px 20px; }
+            .cta::after { display: none; }
+            .byline-row { flex-direction: column; align-items: flex-start; }
+            .intel-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="site-header">
+    <div class="hrow">
+        <a class="brand" href="#">
+            Aniruddha's Science Explorer
+            <span class="brand-sub">Future Astrophysicist</span>
+        </a>
+        <nav class="site-nav">
+            <a href="#">Black Holes</a>
+            <a href="#">Stars</a>
+            <a href="#">Cosmology</a>
+            <a href="#">India in Space</a>
+        </nav>
+    </div>
+</header>
+
+<article>
+
+    <!-- ── Hero ── -->
+    <header class="hero">
+        <div class="kicker">Deep Space &nbsp;&middot;&nbsp; Black Holes &nbsp;&middot;&nbsp; Astrophysics</div>
+        <h1>Seeing the Invisible: How We<br>Photographed a Black Hole</h1>
+        <p class="deck">For two centuries, black holes were invisible &mdash; predicted by maths but never seen. Then we built a telescope the size of Earth and photographed one. This is the story of how we did it, and what the images revealed.</p>
+        <div class="byline-row">
+            <div class="byline-left">
+                <div class="avatar">AB</div>
+                <div>
+                    <div class="byline-name">Aniruddha Bose</div>
+                    <div class="byline-meta">Future Astrophysicist &middot; March 2026 &middot; 7 min read</div>
+                </div>
+            </div>
+            <div class="tags">
+                <span class="tag">Black Holes</span>
+                <span class="tag">Stellar Physics</span>
+                <span class="tag">General Relativity</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Numbers Strip ── -->
+    <div class="stats-strip">
+        <div class="hrow">
+            <div class="snum">
+                <span class="sval">4M</span>
+                <span class="slbl">Solar Masses in Sgr A*</span>
+            </div>
+            <div class="snum">
+                <span class="sval">6.5B</span>
+                <span class="slbl">Solar Masses in M87*</span>
+            </div>
+            <div class="snum">
+                <span class="sval">26,000</span>
+                <span class="slbl">Light-Years to Our Black Hole</span>
+            </div>
+            <div class="snum">
+                <span class="sval">55M</span>
+                <span class="slbl">Light-Years to M87*</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Body ── -->
+    <div class="body">
+
+        <p class="lead">
+            Imagine crushing our entire Sun &mdash; all 1.989 &times; 10<sup>30</sup> kilograms of it &mdash; into a ball just 6 kilometres across. Smaller than most cities. That is roughly what a stellar black hole is: so much mass crammed into so little space that gravity becomes absolute. Nothing that crosses its boundary, the event horizon, ever comes back out. Not particles, not light, not information. The universe, at that point, stops giving things back.
+        </p>
+
+        <p>
+            For over two centuries, black holes were just a mathematical prediction. John Michell first imagined "dark stars" in 1783. Einstein's general relativity made them inevitable in 1915 &mdash; Karl Schwarzschild solved the equations within a year, while serving in World War I. But no one had ever seen one. Then, on April 10, 2019, the Event Horizon Telescope collaboration showed the world an image that changed everything.
+        </p>
+
+        <!-- Panel 1: Image LEFT, text RIGHT -->
+        <span class="sec-label">Discovery 01</span>
+        <h2>The First Photo of a Black Hole &mdash; M87*</h2>
+
+        <div class="panel p-eht">
+            <div class="p-img">
+                <img src="https://cdn.eso.org/images/screen/eso1907a.jpg" alt="First image of a black hole - M87* captured by the Event Horizon Telescope in April 2019">
+                <div class="p-img-credit">Image: EHT Collaboration / ESO</div>
+            </div>
+            <div class="p-text">
+                <p>This is it &mdash; the first direct image of a black hole ever captured by humanity. That bright orange-gold ring is superheated gas and plasma swirling at nearly the speed of light around the supermassive black hole at the centre of galaxy Messier 87, 55 million light-years from Earth. The dark shadow in the middle is the event horizon &mdash; the point of no return.</p>
+                <p>M87* has a mass of 6.5 billion Suns. Its event horizon is about the size of our entire solar system. To photograph something that far away and that dark, the EHT linked eight radio telescopes across four continents into a single virtual telescope the size of Earth itself. The data was so massive it had to be shipped on hard drives by aeroplane &mdash; the internet was too slow.</p>
+            </div>
+        </div>
+
+        <!-- Panel 2: text LEFT, image RIGHT (reversed) -->
+        <span class="sec-label">Discovery 02</span>
+        <h2>Our Own Monster &mdash; Sagittarius A*</h2>
+
+        <div class="panel panel-reverse p-cosmic">
+            <div class="p-text">
+                <p>Three years after M87*, the EHT revealed something even more personal: the first image of Sagittarius A* (Sgr A*), the supermassive black hole sitting at the exact centre of our Milky Way galaxy, just 26,000 light-years from Earth. This is our black hole &mdash; the gravitational anchor around which our entire galaxy, including our Sun and our planet, orbits.</p>
+                <p>Sgr A* is far smaller than M87* &mdash; "only" 4 million solar masses compared to 6.5 billion. But photographing it was actually harder. Gas swirls around Sgr A* so fast (material completes an orbit in minutes, not days) that the image was constantly changing during observation. The team had to average thousands of images to produce the final result. What you see is one of the most difficult photographs ever made.</p>
+            </div>
+            <div class="p-img">
+                <img src="https://cdn.eso.org/images/screen/eso2208-eht-mwa.jpg" alt="First image of Sagittarius A* - the supermassive black hole at the centre of our Milky Way galaxy">
+                <div class="p-img-credit">Image: EHT Collaboration / ESO</div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <div class="callout-lbl">Mind-Blown Moment</div>
+            <p>If you could somehow compress Earth into a black hole, its event horizon would be just 18 millimetres across &mdash; smaller than a marble. Yet it would still have the same mass and gravitational pull at a distance. The Moon would keep orbiting. The only difference: get close enough, and you would be gone forever. Black holes are not about mass. They are about density.</p>
+        </div>
+
+        <!-- Panel 3: image LEFT, text RIGHT -->
+        <span class="sec-label">Discovery 03</span>
+        <h2>Bending Light &mdash; How Gravity Warps Spacetime</h2>
+
+        <div class="panel p-nasa">
+            <div class="p-img">
+                <img src="https://svs.gsfc.nasa.gov/vis/a010000/a013300/a013326/BH_AccretionDisk_360_4k.00250_print.jpg" alt="NASA simulation of a black hole with accretion disk showing gravitational lensing">
+                <div class="p-img-credit">Image: NASA Goddard / Jeremy Schnittman</div>
+            </div>
+            <div class="p-text">
+                <p>This NASA supercomputer simulation shows what you would actually see if you were floating near a black hole with an accretion disk &mdash; the ring of infalling matter. Notice something strange: you can see the back of the disk arching over the top. That is gravitational lensing. The black hole's gravity is so extreme that it bends the path of light around itself, letting you see behind it.</p>
+                <p>Einstein predicted this in 1915. He called gravity not a force, but a curvature of spacetime itself. Massive objects bend the fabric of space and time, and light follows that curved path. Near a black hole, this effect is so extreme that space folds over on itself. This is not science fiction &mdash; the film Interstellar's black hole "Gargantua" was based on these exact equations, calculated by Nobel Prize-winning physicist Kip Thorne.</p>
+            </div>
+        </div>
+
+        <!-- Panel 4: text LEFT, image RIGHT (reversed) -->
+        <span class="sec-label">Discovery 04</span>
+        <h2>India's Eye on Black Holes &mdash; ISRO's AstroSat</h2>
+
+        <div class="panel panel-reverse p-isro">
+            <div class="p-text">
+                <p>India is not a spectator in black hole science. ISRO's AstroSat, launched in September 2015, is India's first dedicated space observatory. It carries five instruments that observe simultaneously in visible light, ultraviolet, and X-rays &mdash; and it has been studying black holes since day one.</p>
+                <p>In one landmark observation, AstroSat studied the black hole X-ray binary MAXI J1820+070 using all five instruments at once &mdash; the first time a black hole was observed across so many wavelengths simultaneously from a single satellite. This diagram shows the "hard state" and "soft state" of the black hole system, revealing how X-rays (blue) and optical emissions (red) are produced as matter spirals inward. This is real Indian science, contributing directly to our understanding of how black holes consume matter.</p>
+            </div>
+            <div class="p-img">
+                <img src="https://www.isro.gov.in/media_isro/image/index/Astrosat/picture1.jpg" alt="ISRO AstroSat observation of black hole X-ray binary MAXI J1820+070">
+                <div class="p-img-credit">Image: ISRO / AstroSat Mission</div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <div class="callout-lbl">The Indian Connection</div>
+            <p>Subrahmanyan Chandrasekhar, an Indian astrophysicist born in Lahore in 1910, calculated the maximum mass a white dwarf star can have before it collapses &mdash; now called the Chandrasekhar Limit (1.4 solar masses). Above that limit, the star's core will collapse into a neutron star or a black hole. He won the Nobel Prize in Physics in 1983 for this work. NASA's Chandra X-ray Observatory is named after him. Every time we study a black hole through Chandra, we are honouring Indian science.</p>
+        </div>
+
+        <!-- Panel 5: image LEFT, text RIGHT -->
+        <span class="sec-label">Discovery 05</span>
+        <h2>Gravity's Fingerprint &mdash; Einstein Rings</h2>
+
+        <div class="panel p-hubble">
+            <div class="p-img">
+                <img src="https://cdn.esahubble.org/archives/images/screen/potw2050a.jpg" alt="Hubble Space Telescope image of gravitational lensing around galaxy cluster Abell 3827 - Einstein Rings">
+                <div class="p-img-credit">Image: ESA/Hubble &amp; NASA, R. Massey</div>
+            </div>
+            <div class="p-text">
+                <p>This Hubble Space Telescope image of galaxy cluster Abell 3827 shows one of the most beautiful effects in all of physics: gravitational lensing at cosmic scale. Those curved arcs of light are not objects &mdash; they are images of distant galaxies behind the cluster, stretched and bent into rings and arcs by the cluster's immense gravity. These are called Einstein Rings.</p>
+                <p>The same physics that bends light around a single black hole operates here at the scale of thousands of galaxies. The mass of the cluster acts like a giant cosmic magnifying glass. Astronomers actually use this effect to study objects that would otherwise be too faint and far away to see &mdash; using gravity itself as a telescope. General relativity is not just theory. It is a tool.</p>
+            </div>
+        </div>
+
+        <p>
+            Black holes are not destroyers. They are builders. They anchor galaxies, drive jets of energy millions of light-years long, and mark the boundaries of our understanding. At the centre of every major galaxy sits a supermassive black hole. Our understanding of them has gone from pure mathematics to direct observation in a single century. And the deepest question &mdash; what happens to information that falls in &mdash; remains unsolved. That is where the next generation of physicists comes in.
+        </p>
+
+    </div><!-- /.body -->
+</article>
+
+<!-- ── Science Explorer Intelligence: Black Hole Types ── -->
+<section class="intelligence">
+    <span class="sec-label">Black Hole Science</span>
+    <h2>Two Types of Black Holes &mdash; Same Physics, Different Scales</h2>
+
+    <div class="intel-grid">
+        <!-- Type A -->
+        <div class="scenario-card">
+            <div class="scenario-header h-stellar">
+                <div class="scenario-badge">Stellar Mass &middot; 5-100 Solar Masses</div>
+                <div class="scenario-title">Stellar Black Holes</div>
+            </div>
+            <div class="scenario-body scenario-a">
+                <ul>
+                    <li>Born from the death of massive stars (above ~25 solar masses)</li>
+                    <li>Formed in supernova explosions &mdash; the star's core collapses in under a second</li>
+                    <li>Event horizon: 15&ndash;300 km across (smaller than a city)</li>
+                    <li>Billions exist in the Milky Way alone &mdash; most are invisible and undetected</li>
+                    <li>Detected when they orbit a companion star and pull material from it (X-ray binaries)</li>
+                    <li>LIGO detects their mergers through gravitational waves &mdash; ripples in spacetime itself</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Type B -->
+        <div class="scenario-card">
+            <div class="scenario-header h-super">
+                <div class="scenario-badge">Supermassive &middot; Millions to Billions of Solar Masses</div>
+                <div class="scenario-title">Supermassive Black Holes</div>
+            </div>
+            <div class="scenario-body scenario-b">
+                <ul>
+                    <li>Found at the centre of nearly every large galaxy &mdash; including ours</li>
+                    <li>How they formed is still one of the biggest unsolved mysteries in astrophysics</li>
+                    <li>Sagittarius A*: 4 million solar masses, event horizon 12 million km across</li>
+                    <li>M87*: 6.5 billion solar masses, event horizon larger than our solar system</li>
+                    <li>When actively feeding, they power quasars &mdash; the brightest objects in the universe</li>
+                    <li>They may have shaped galaxy formation itself &mdash; no supermassive black hole, no galaxy</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Dream Big CTA ── -->
+<section class="body">
+    <div class="cta">
+        <div class="cta-eye">Keep Exploring</div>
+        <h2>The Event Horizon Is Not the End.<br>It Is Where the Questions Begin.</h2>
+        <p>
+            We have seen the shadow of a black hole. We have heard the spacetime ripples of two black holes colliding. India's own AstroSat watches them devour matter in X-ray light. But the deepest questions &mdash; what happens inside? Does information survive? Can quantum mechanics and gravity ever be unified? &mdash; are still waiting for answers. They are waiting for the next generation of physicists. They are waiting for people like you.
+        </p>
+        <blockquote>
+            "Not only does God play dice, but He sometimes throws them where they cannot be seen."
+            <cite>&mdash; Stephen Hawking, on black holes and quantum mechanics</cite>
+        </blockquote>
+        <div class="cta-btns">
+            <a href="#" class="btn-primary">Next Article</a>
+            <a href="#" class="btn-outline">Explore More Topics</a>
+        </div>
+        <p class="cta-sub">Black Holes &middot; General Relativity &middot; Stellar Physics &middot; Indian Astrophysics &middot; Event Horizon Telescope</p>
+    </div>
+</section>
+
+</body>
+</html>
