@@ -7,7 +7,7 @@ var ARTICLES = [
     category: 'Game Dev',
     title: 'PixelRift — Building an Indie Game from the Ground Up',
     excerpt:
-      'A 2D pixel-art platformer built in Python and Pygame, where reality slowly breaks apart. From gameplay systems and world-building to player accounts and shipping on Steam.',
+      'A 2D pixel-art platformer built in Python and Pygame, with levels that keep introducing new mechanics. From gameplay systems and level design to player accounts and shipping on Steam.',
     image: '../assets/img/pixelrift.jpg',
     tags: ['Game Dev', 'Python', 'Pygame', 'Coding', 'Pixel Art'],
     published: '2026-09-26',

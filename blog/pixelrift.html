@@ -7,7 +7,7 @@
     <title>PixelRift — Building an Indie Game from the Ground Up | Aniruddha Bose</title>
     <meta
       name="description"
-      content="PixelRift is an independent 2D pixel-art platformer built in Python and Pygame — from gameplay systems and world-building to accounts, accessibility and shipping on Steam."
+      content="PixelRift is an independent 2D pixel-art platformer built in Python and Pygame — from gameplay systems and level design to accounts, accessibility and shipping on Steam."
     />
     <meta name="keywords" content="PixelRift, indie game, pixel art, platformer, Python, Pygame, game development, Steam" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,7 +48,7 @@
             </div>
             <h1 class="post-title">PixelRift — Building an Indie Game from the Ground Up</h1>
             <p class="post-subtitle">
-              From an idea to a complete game world &mdash; an independent 2D pixel-art platformer, built in Python and Pygame and heading to Steam.
+              From an idea to a complete game &mdash; an independent 2D pixel-art platformer, built in Python and Pygame and heading to Steam.
             </p>
             <div class="tags">
               <span class="tag">Game Dev</span>
@@ -62,51 +62,42 @@
           <div class="body">
             <img class="post-hero pixel" src="../assets/img/pixelrift.jpg" alt="PixelRift title art over forest, desert, polar and cave scenery" width="460" height="215" />
             <p class="lead">
-              <strong>PixelRift</strong> is an independent 2D pixel-art platformer built around a simple idea: take the familiarity of classic platforming and gradually transform it into something stranger, more challenging, and more unpredictable.
+              <strong>PixelRift</strong> is an independent 2D pixel-art platformer built around a simple idea: take the familiarity of classic platforming and gradually introduce more challenging mechanics, environments and obstacles.
             </p>
             <p>
-              What started as a small game-development experiment evolved into a much larger project involving <strong>gameplay programming, level design, visual design, world-building, backend systems, accessibility, player accounts, testing, deployment, and Steam publishing</strong>.
+              What started as a small game-development experiment evolved into a much larger project involving <strong>gameplay programming, level design, visual design, backend systems, accessibility, player accounts, testing, deployment and Steam publishing</strong>.
             </p>
             <p>
               Rather than treating PixelRift purely as a game, I approached it as a complete software product &mdash; designing not only what happens when the player presses &ldquo;Play,&rdquo; but also the systems and infrastructure needed to turn a collection of code and assets into a game that can actually be distributed to players.
             </p>
 
             <h2>The Concept</h2>
-            <p>The world of PixelRift was once normal.</p>
-            <p>Forests, deserts, frozen landscapes, swamps, oceans and mountains existed much as they always had.</p>
-            <p>Then the <strong>Rift</strong> appeared.</p>
+            <p>PixelRift is a 2D platformer built around exploration, movement and increasingly challenging levels.</p>
             <p>
-              Nobody knows where it came from. There was no invasion and no single catastrophic explosion. Reality simply began to break.
+              The game begins with relatively straightforward platforming but gradually introduces more complex environments, enemies, hazards and mechanics.
             </p>
             <p>
-              At first, the effects were small. Objects appeared where they shouldn&rsquo;t. Animals behaved strangely. Gravity occasionally stopped working.
-            </p>
-            <p>Eventually, entire regions began changing.</p>
-            <p>
-              The Rift transformed ordinary environments and creatures into increasingly dangerous and impossible versions of themselves. Deep underground, the <strong>Crystal Caverns</strong> contain physical deposits of Rift energy. Elsewhere, a mysterious <strong>Clockwork Factory</strong> continues operating despite apparently having nobody controlling it.
+              One of my main goals was to make progression feel meaningful. Instead of simply increasing enemy health or making jumps longer, later levels introduce new combinations of mechanics that require the player to use what they have already learned in different ways.
             </p>
             <p>
-              Every path ultimately leads toward the <strong>Shadow Stronghold</strong> &mdash; a place whose builder, purpose and connection to the Rift remain unknown.
+              This meant thinking carefully about how mechanics are introduced, how players learn them and how they can later be combined to create more difficult challenges.
             </p>
-            <p>This progression became the foundation for both the game&rsquo;s narrative and its level design.</p>
 
-            <h2>Designing the World</h2>
+            <h2>Designing the Levels</h2>
             <p>PixelRift is structured around a sequence of increasingly difficult environments.</p>
             <p>
-              The earlier regions &mdash; including the <strong>Forest, Desert and Polar regions</strong> &mdash; introduce the player to the game&rsquo;s movement and platforming systems.
+              Earlier regions such as the <strong>Forest, Desert and Polar regions</strong> introduce the player to the game&rsquo;s core movement and platforming systems.
             </p>
             <p>
-              The world then becomes progressively more hostile through environments such as the <strong>Swamp, Volcano, Ocean and Sky</strong>.
-            </p>
-            <p>
-              Finally, the player reaches the game&rsquo;s most difficult and unusual areas: the <strong>Crystal Caverns, Clockwork Factory and Shadow Stronghold</strong>.
+              Later environments include the <strong>Swamp, Volcano, Ocean and Sky</strong>, followed by more challenging areas such as the <strong>Crystal Caverns, Clockwork Factory and Shadow Stronghold</strong>.
             </p>
             <p>Each environment is designed to feel mechanically different rather than simply being a visual reskin.</p>
             <p>
-              Different levels introduce combinations of environmental hazards, enemies, moving platforms, gravity-altering mechanics, bounce pads and other obstacles. Parallax backgrounds, lighting elements and environmental animation help give each region its own identity.
+              Different levels introduce combinations of environmental hazards, enemies, moving platforms, gravity-altering mechanics, bounce pads and other obstacles. Parallax backgrounds, lighting elements and environmental animation also help give each region its own visual identity.
             </p>
-            <p>Difficulty therefore grows alongside the world itself.</p>
-            <p>The farther the player travels, the more unstable reality becomes.</p>
+            <p>
+              The challenge is making every new environment feel different while keeping the fundamental controls familiar to the player.
+            </p>
 
             <h2>Gameplay and Systems</h2>
             <p>Developing PixelRift meant building far more than a character that could run and jump.</p>
@@ -147,18 +138,18 @@
             <p>The result has been a project combining software engineering with creative design.</p>
 
             <h2>Designing Enemies and Bosses</h2>
-            <p>Enemies were designed to reflect their environments rather than existing as interchangeable obstacles.</p>
             <p>
-              Different regions introduce creatures such as an ape in the Forest, a sand golem in the Desert, a fire dragon in the Volcano and a giant roc in the Sky.
-            </p>
-            <p>Later encounters become increasingly unnatural.</p>
-            <p>
-              The Clockwork Factory introduces mechanical threats, while the Shadow Stronghold moves toward darker and more mysterious enemies.
+              Enemies were designed around the environments and gameplay challenges of their respective levels rather than existing as interchangeable obstacles.
             </p>
             <p>
-              Boss encounters required another layer of design. They needed to communicate attacks clearly enough for players to learn patterns while still creating pressure and spectacle.
+              Different regions introduce different enemy types, movement patterns and attacks. Some enemies create direct threats, while others are designed to interact with platforming challenges or force the player to change how they move through a level.
             </p>
-            <p>Animations, attack timing, environmental interaction and visual feedback all had to work together.</p>
+            <p>Boss encounters required another layer of design.</p>
+            <p>
+              A boss needs to be difficult without feeling unpredictable or unfair. Attacks therefore need to communicate clearly enough for players to recognize patterns, react and gradually improve with each attempt.
+            </p>
+            <p>Animations, attack timing, movement, environmental interaction and visual feedback all have to work together.</p>
+            <p>This reinforced an important principle throughout development:</p>
             <div class="callout">
               <div class="callout-lbl">Design principle</div>
               <p><strong>Difficulty should come from mastering mechanics, not from confusing the player.</strong></p>
@@ -168,7 +159,7 @@
             <p>Pixel art looks simple from a distance.</p>
             <p>In practice, maintaining visual consistency across a game is surprisingly difficult.</p>
             <p>
-              Coins, gems, enemies, environments, user-interface elements and effects all need to look like they belong to the same world.
+              Coins, gems, enemies, environments, user-interface elements and effects all need to look like they belong to the same game.
             </p>
             <p>
               Even something as small as the design of an in-game coin raised questions about readability, symbolism, accessibility and whether the design could accidentally resemble real-world currency.
@@ -206,6 +197,9 @@
             <p>
               A platformer may appear to be entirely about graphics and physics, but once accounts and online functionality are introduced, issues such as authentication, abuse prevention, privacy and service reliability become part of the product architecture.
             </p>
+            <p>
+              It demonstrated how quickly a game can grow from a standalone program into a system involving multiple technologies and services.
+            </p>
 
             <h2>Preparing for Steam</h2>
             <p>
@@ -231,16 +225,24 @@
             <p>Building the game was only one part of the challenge.</p>
             <p>Shipping it was another engineering problem entirely.</p>
 
-            <h2>Building a Universe, Not Just Levels</h2>
-            <p>As PixelRift developed, its world began to offer opportunities beyond the original game.</p>
-            <p>The Rift itself was deliberately left unexplained.</p>
+            <h2>Iteration and Problem Solving</h2>
+            <p>One of the most important parts of developing PixelRift has been learning to iterate.</p>
+            <p>Features rarely work perfectly the first time.</p>
             <p>
-              That creates room for future games to explore different events, locations and perspectives without requiring every story to follow the same characters or gameplay style.
+              A mechanic might function correctly but feel awkward to play. An asset might look good on its own but become difficult to see against a particular background. A menu might technically work while still being confusing to navigate.
             </p>
+            <p>Development therefore became a continuous process of:</p>
+            <ol class="flow" aria-label="Iteration loop">
+              <li>Build</li>
+              <li>Test</li>
+              <li>Find problems</li>
+              <li>Improve</li>
+              <li>Test again</li>
+            </ol>
+            <p>Sometimes this meant fixing bugs. Other times it meant completely reconsidering an earlier design decision.</p>
             <p>
-              A future project could, for example, explore researchers attempting to study a Rift anomaly inside a scientific facility &mdash; shifting the universe from platforming toward science-fiction horror while preserving the underlying mythology.
+              Learning when to improve an existing idea and when to replace it entirely became an important part of the development process.
             </p>
-            <p>This approach allows PixelRift to function as both an individual game and the foundation of a broader fictional universe.</p>
 
             <h2>What I Learned</h2>
             <p>PixelRift became much more than an exercise in programming.</p>
@@ -249,14 +251,14 @@
               <li><strong>Software Engineering</strong> &mdash; designing and maintaining interconnected gameplay systems.</li>
               <li><strong>Game Design</strong> &mdash; balancing mechanics, difficulty and player feedback.</li>
               <li><strong>Product Design</strong> &mdash; thinking about the entire player journey rather than individual features.</li>
-              <li><strong>Visual Design</strong> &mdash; maintaining a coherent pixel-art language across environments and UI.</li>
+              <li><strong>Visual Design</strong> &mdash; maintaining a coherent pixel-art style across environments and UI.</li>
               <li><strong>Backend Engineering</strong> &mdash; integrating authentication and supporting online functionality.</li>
               <li><strong>DevOps and Distribution</strong> &mdash; moving builds through testing and Steam deployment workflows.</li>
-              <li><strong>World-Building</strong> &mdash; creating enough narrative structure to make environments feel connected without over-explaining the mystery.</li>
+              <li><strong>Testing and Iteration</strong> &mdash; identifying problems and continuously refining mechanics, visuals and user experience.</li>
             </ul>
             <p>Perhaps the biggest lesson was that building a game is fundamentally an integration problem.</p>
             <p>
-              Code, art, music, narrative, infrastructure and player experience can each work individually and still fail when combined.
+              Code, art, music, infrastructure and player experience can each work individually and still fail when combined.
             </p>
             <p>The real challenge is making all of them work <strong>together</strong>.</p>
 
@@ -264,8 +266,8 @@
             <dl class="snapshot">
               <div><dt>Project</dt><dd>PixelRift</dd></div>
               <div><dt>Type</dt><dd>Independent 2D Pixel Platformer</dd></div>
-              <div><dt>Platform</dt><dd>Windows</dd></div>
-              <div><dt>Technology</dt><dd>Python, Pygame-CE</dd></div>
+              <div><dt>Platform</dt><dd>Windows / macOS / Linux</dd></div>
+              <div><dt>Technology</dt><dd>Python, Pygame</dd></div>
               <div><dt>Distribution</dt><dd>Steam</dd></div>
               <div><dt>Steam App ID</dt><dd>4846670</dd></div>
               <div><dt>Status</dt><dd>In Development</dd></div>
@@ -293,7 +295,10 @@
             <p>PixelRift started with a straightforward goal: build a platformer.</p>
             <p>It became an opportunity to experience almost every stage of taking a digital product from an idea toward release.</p>
             <p>
-              I have designed levels, programmed mechanics, developed enemies, refined visual assets, considered accessibility, worked through authentication problems, prepared Steam builds, designed the game&rsquo;s fictional universe and thought about how the project could expand beyond a single title.
+              I have designed levels, programmed mechanics, developed enemies, refined visual assets, considered accessibility, worked through authentication problems and prepared builds for Steam.
+            </p>
+            <p>
+              Along the way, I learned that completing a project of this scale requires much more than getting the code to work. It requires constant testing, iteration and decisions about how dozens of individual systems should work together.
             </p>
             <p>There are still things to build, balance and improve before release.</p>
             <p>But that is also what makes PixelRift one of the most valuable projects I have worked on.</p>
