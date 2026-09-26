@@ -3,6 +3,18 @@
 
 var ARTICLES = [
   {
+    url: 'fly-connectome.html',
+    category: 'Neuroscience',
+    title: '166,000 Neurons, 125 Million Connections: Mapping a Fly’s Brain with AI',
+    excerpt:
+      'Scientists have mapped every neuron and connection in an adult male fruit fly’s brain and nerve cord — and AI helped make it possible. Here is how, and why it matters.',
+    image: 'https://www.genengnews.com/wp-content/uploads/2024/10/Low-Res_fw_50_L.jpg',
+    tags: ['Neuroscience', 'AI', 'Biology', 'Connectomics'],
+    published: '2026-09-26',
+    date: 'September 26, 2026',
+    readTime: '8 min read',
+  },
+  {
     url: 'pixelrift.html',
     category: 'Game Dev',
     title: 'PixelRift — Building an Indie Game from the Ground Up',
@@ -61,6 +73,8 @@ var TOPICS = [
   'India in Space',
   'Physics',
   'Solar System',
+  'Neuroscience',
+  'AI',
   'Coding',
   'Game Dev',
   'Fiction',
