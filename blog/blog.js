@@ -3,6 +3,18 @@
 
 var ARTICLES = [
   {
+    url: 'pixelrift.html',
+    category: 'Game Dev',
+    title: 'PixelRift — Building an Indie Game from the Ground Up',
+    excerpt:
+      'A 2D pixel-art platformer built in Python and Pygame, where reality slowly breaks apart. From gameplay systems and world-building to player accounts and shipping on Steam.',
+    image: '../assets/img/pixelrift.jpg',
+    tags: ['Game Dev', 'Python', 'Pygame', 'Coding', 'Pixel Art'],
+    published: '2026-09-26',
+    date: 'September 26, 2026',
+    readTime: '7 min read',
+  },
+  {
     url: 'elarion.html',
     category: 'Fiction',
     title: 'The Shadow of Elarion',
@@ -50,12 +62,19 @@ var TOPICS = [
   'Physics',
   'Solar System',
   'Coding',
+  'Game Dev',
   'Fiction',
 ];
 
 // Placeholder shown when an article has no image (a minimalist browser glyph).
 var PLACEHOLDER_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><circle cx="6" cy="6.5" r="0.5" fill="currentColor" stroke="none"/><circle cx="8.3" cy="6.5" r="0.5" fill="currentColor" stroke="none"/><circle cx="10.6" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>';
+
+// Alternative placeholders an article can pick with its `icon` field.
+var PLACEHOLDER_ICONS = {
+  gamepad:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15.5" cy="11" r="0.6" fill="currentColor" stroke="none"/><circle cx="17.5" cy="13" r="0.6" fill="currentColor" stroke="none"/></svg>',
+};
 
 var CALENDAR_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>';
@@ -121,7 +140,7 @@ function cardHtml(article) {
 
   var media = article.image
     ? '<img src="' + encodeURI(article.image) + '" alt="' + escapeHtml(article.title) + '" loading="lazy" />'
-    : '<div class="card-placeholder">' + PLACEHOLDER_SVG + '</div>';
+    : '<div class="card-placeholder">' + (PLACEHOLDER_ICONS[article.icon] || PLACEHOLDER_SVG) + '</div>';
 
   return (
     '<a class="post-card" href="' + encodeURI(article.url) + '">' +

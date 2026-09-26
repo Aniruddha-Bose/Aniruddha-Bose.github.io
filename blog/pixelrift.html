@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PixelRift — Building an Indie Game from the Ground Up | Aniruddha Bose</title>
+    <meta
+      name="description"
+      content="PixelRift is an independent 2D pixel-art platformer built in Python and Pygame — from gameplay systems and world-building to accounts, accessibility and shipping on Steam."
+    />
+    <meta name="keywords" content="PixelRift, indie game, pixel art, platformer, Python, Pygame, game development, Steam" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <meta name="theme-color" content="#6366f1" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.html" class="logo">Aniruddha Bose</a>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../skills.html">Skills</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="index.html" class="active">Blog</a></li>
+          <li><a href="../hobbies.html">Hobbies</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section class="blog-post">
+        <article class="container">
+          <a href="index.html" class="back-link">&larr; Back to Blog</a>
+
+          <header class="header">
+            <div class="meta">
+              <span>September 26, 2026</span>
+              <span class="dot">&bull;</span>
+              <span>7 min read</span>
+            </div>
+            <h1 class="post-title">PixelRift — Building an Indie Game from the Ground Up</h1>
+            <p class="post-subtitle">
+              From an idea to a complete game world &mdash; an independent 2D pixel-art platformer, built in Python and Pygame and heading to Steam.
+            </p>
+            <div class="tags">
+              <span class="tag">Game Dev</span>
+              <span class="tag">Python</span>
+              <span class="tag">Pygame</span>
+              <span class="tag">Coding</span>
+              <span class="tag">Pixel Art</span>
+            </div>
+          </header>
+
+          <div class="body">
+            <img class="post-hero pixel" src="../assets/img/pixelrift.jpg" alt="PixelRift title art over forest, desert, polar and cave scenery" width="460" height="215" />
+            <p class="lead">
+              <strong>PixelRift</strong> is an independent 2D pixel-art platformer built around a simple idea: take the familiarity of classic platforming and gradually transform it into something stranger, more challenging, and more unpredictable.
+            </p>
+            <p>
+              What started as a small game-development experiment evolved into a much larger project involving <strong>gameplay programming, level design, visual design, world-building, backend systems, accessibility, player accounts, testing, deployment, and Steam publishing</strong>.
+            </p>
+            <p>
+              Rather than treating PixelRift purely as a game, I approached it as a complete software product &mdash; designing not only what happens when the player presses &ldquo;Play,&rdquo; but also the systems and infrastructure needed to turn a collection of code and assets into a game that can actually be distributed to players.
+            </p>
+
+            <h2>The Concept</h2>
+            <p>The world of PixelRift was once normal.</p>
+            <p>Forests, deserts, frozen landscapes, swamps, oceans and mountains existed much as they always had.</p>
+            <p>Then the <strong>Rift</strong> appeared.</p>
+            <p>
+              Nobody knows where it came from. There was no invasion and no single catastrophic explosion. Reality simply began to break.
+            </p>
+            <p>
+              At first, the effects were small. Objects appeared where they shouldn&rsquo;t. Animals behaved strangely. Gravity occasionally stopped working.
+            </p>
+            <p>Eventually, entire regions began changing.</p>
+            <p>
+              The Rift transformed ordinary environments and creatures into increasingly dangerous and impossible versions of themselves. Deep underground, the <strong>Crystal Caverns</strong> contain physical deposits of Rift energy. Elsewhere, a mysterious <strong>Clockwork Factory</strong> continues operating despite apparently having nobody controlling it.
+            </p>
+            <p>
+              Every path ultimately leads toward the <strong>Shadow Stronghold</strong> &mdash; a place whose builder, purpose and connection to the Rift remain unknown.
+            </p>
+            <p>This progression became the foundation for both the game&rsquo;s narrative and its level design.</p>
+
+            <h2>Designing the World</h2>
+            <p>PixelRift is structured around a sequence of increasingly difficult environments.</p>
+            <p>
+              The earlier regions &mdash; including the <strong>Forest, Desert and Polar regions</strong> &mdash; introduce the player to the game&rsquo;s movement and platforming systems.
+            </p>
+            <p>
+              The world then becomes progressively more hostile through environments such as the <strong>Swamp, Volcano, Ocean and Sky</strong>.
+            </p>
+            <p>
+              Finally, the player reaches the game&rsquo;s most difficult and unusual areas: the <strong>Crystal Caverns, Clockwork Factory and Shadow Stronghold</strong>.
+            </p>
+            <p>Each environment is designed to feel mechanically different rather than simply being a visual reskin.</p>
+            <p>
+              Different levels introduce combinations of environmental hazards, enemies, moving platforms, gravity-altering mechanics, bounce pads and other obstacles. Parallax backgrounds, lighting elements and environmental animation help give each region its own identity.
+            </p>
+            <p>Difficulty therefore grows alongside the world itself.</p>
+            <p>The farther the player travels, the more unstable reality becomes.</p>
+
+            <h2>Gameplay and Systems</h2>
+            <p>Developing PixelRift meant building far more than a character that could run and jump.</p>
+            <p>The game required interconnected systems for:</p>
+            <ul>
+              <li>Player movement, physics and collision detection</li>
+              <li>Enemy behaviour and boss encounters</li>
+              <li>Level progression and difficulty</li>
+              <li>Environmental hazards</li>
+              <li>Gravity mechanics and bounce pads</li>
+              <li>Collectibles, coins and gems</li>
+              <li>Player settings and accessibility options</li>
+              <li>Audio and music</li>
+              <li>Animation and visual effects</li>
+              <li>Death effects and player feedback</li>
+              <li>Account-related functionality</li>
+              <li>Save and progression systems</li>
+              <li>Game distribution and update management</li>
+            </ul>
+            <p>One of the biggest lessons from the project was how quickly seemingly small features become interconnected.</p>
+            <p>
+              A new movement mechanic, for example, does not affect only the player controller. It can influence level geometry, enemy placement, animation timing, collision handling, accessibility, testing and difficulty balancing.
+            </p>
+            <p>Game development therefore became an exercise in <strong>systems thinking</strong>.</p>
+
+            <h2>Building with Python and Pygame</h2>
+            <p>PixelRift is being developed using <strong>Python and Pygame</strong>.</p>
+            <p>
+              Using Pygame provided a relatively low-level environment compared with larger commercial game engines. Many systems that an engine might normally provide had to be designed or implemented directly.
+            </p>
+            <p>
+              This included managing the game loop, rendering, sprites, collision behaviour, input handling, animation states, level logic and other gameplay systems.
+            </p>
+            <p>That constraint became one of the project&rsquo;s strengths.</p>
+            <p>
+              Instead of relying entirely on engine abstractions, developing PixelRift required understanding how the individual components of a 2D game interact underneath the surface.
+            </p>
+            <p>The result has been a project combining software engineering with creative design.</p>
+
+            <h2>Designing Enemies and Bosses</h2>
+            <p>Enemies were designed to reflect their environments rather than existing as interchangeable obstacles.</p>
+            <p>
+              Different regions introduce creatures such as an ape in the Forest, a sand golem in the Desert, a fire dragon in the Volcano and a giant roc in the Sky.
+            </p>
+            <p>Later encounters become increasingly unnatural.</p>
+            <p>
+              The Clockwork Factory introduces mechanical threats, while the Shadow Stronghold moves toward darker and more mysterious enemies.
+            </p>
+            <p>
+              Boss encounters required another layer of design. They needed to communicate attacks clearly enough for players to learn patterns while still creating pressure and spectacle.
+            </p>
+            <p>Animations, attack timing, environmental interaction and visual feedback all had to work together.</p>
+            <div class="callout">
+              <div class="callout-lbl">Design principle</div>
+              <p><strong>Difficulty should come from mastering mechanics, not from confusing the player.</strong></p>
+            </div>
+
+            <h2>Creating a Consistent Visual Language</h2>
+            <p>Pixel art looks simple from a distance.</p>
+            <p>In practice, maintaining visual consistency across a game is surprisingly difficult.</p>
+            <p>
+              Coins, gems, enemies, environments, user-interface elements and effects all need to look like they belong to the same world.
+            </p>
+            <p>
+              Even something as small as the design of an in-game coin raised questions about readability, symbolism, accessibility and whether the design could accidentally resemble real-world currency.
+            </p>
+            <p>The project therefore involved repeated cycles of:</p>
+            <ol class="flow" aria-label="Asset design cycle">
+              <li>Design</li>
+              <li>Test in-game</li>
+              <li>Evaluate</li>
+              <li>Refine</li>
+            </ol>
+            <p>Assets that looked good in isolation did not necessarily work when placed inside an actual level.</p>
+            <p>Testing them in context became an essential part of the design process.</p>
+
+            <h2>Accessibility and Player Experience</h2>
+            <p>Another important part of PixelRift has been thinking about how different players experience the game.</p>
+            <p>Accessibility cannot simply be added at the end of development as a single toggle.</p>
+            <p>Settings need to distinguish between genuine accessibility features and general gameplay or visual preferences.</p>
+            <p>The user experience also extends beyond gameplay itself.</p>
+            <p>
+              Menus, account creation, error messages, authentication, visual feedback and configuration all contribute to whether the game feels polished.
+            </p>
+            <p>This shifted my perspective from simply asking:</p>
+            <p class="question"><em>&ldquo;Does the game work?&rdquo;</em></p>
+            <p>to asking:</p>
+            <p class="question"><em>&ldquo;Does the player understand what is happening?&rdquo;</em></p>
+            <p>Those are very different questions.</p>
+
+            <h2>Backend and Account Systems</h2>
+            <p>PixelRift also expanded beyond purely local gameplay.</p>
+            <p>
+              Player account functionality introduced backend considerations such as authentication and email verification. <strong>Firebase</strong> was explored for authentication infrastructure, including the challenges involved in reliable verification emails and custom transactional email delivery.
+            </p>
+            <p>This introduced a completely different category of engineering concerns.</p>
+            <p>
+              A platformer may appear to be entirely about graphics and physics, but once accounts and online functionality are introduced, issues such as authentication, abuse prevention, privacy and service reliability become part of the product architecture.
+            </p>
+
+            <h2>Preparing for Steam</h2>
+            <p>
+              One of the most valuable parts of the project has been learning what happens between <strong>finishing a build</strong> and <strong>shipping a product</strong>.
+            </p>
+            <p>PixelRift is being prepared for distribution through Steam, which introduced another set of workflows:</p>
+            <ol class="flow" aria-label="Steam release pipeline">
+              <li>Game build</li>
+              <li>Depot upload</li>
+              <li>SteamPipe build</li>
+              <li>Branch configuration</li>
+              <li>Internal testing</li>
+              <li>Store configuration</li>
+              <li>Review</li>
+              <li>Release</li>
+            </ol>
+            <p>
+              This involved learning about build branches, depots, internal testing, store assets, library capsules, demo submissions and release requirements.
+            </p>
+            <p>
+              It also meant considering the less glamorous but essential parts of releasing software: Terms of Service, Privacy Policy, online-content rules and player-data handling.
+            </p>
+            <p>Building the game was only one part of the challenge.</p>
+            <p>Shipping it was another engineering problem entirely.</p>
+
+            <h2>Building a Universe, Not Just Levels</h2>
+            <p>As PixelRift developed, its world began to offer opportunities beyond the original game.</p>
+            <p>The Rift itself was deliberately left unexplained.</p>
+            <p>
+              That creates room for future games to explore different events, locations and perspectives without requiring every story to follow the same characters or gameplay style.
+            </p>
+            <p>
+              A future project could, for example, explore researchers attempting to study a Rift anomaly inside a scientific facility &mdash; shifting the universe from platforming toward science-fiction horror while preserving the underlying mythology.
+            </p>
+            <p>This approach allows PixelRift to function as both an individual game and the foundation of a broader fictional universe.</p>
+
+            <h2>What I Learned</h2>
+            <p>PixelRift became much more than an exercise in programming.</p>
+            <p>It required me to work across several disciplines simultaneously:</p>
+            <ul>
+              <li><strong>Software Engineering</strong> &mdash; designing and maintaining interconnected gameplay systems.</li>
+              <li><strong>Game Design</strong> &mdash; balancing mechanics, difficulty and player feedback.</li>
+              <li><strong>Product Design</strong> &mdash; thinking about the entire player journey rather than individual features.</li>
+              <li><strong>Visual Design</strong> &mdash; maintaining a coherent pixel-art language across environments and UI.</li>
+              <li><strong>Backend Engineering</strong> &mdash; integrating authentication and supporting online functionality.</li>
+              <li><strong>DevOps and Distribution</strong> &mdash; moving builds through testing and Steam deployment workflows.</li>
+              <li><strong>World-Building</strong> &mdash; creating enough narrative structure to make environments feel connected without over-explaining the mystery.</li>
+            </ul>
+            <p>Perhaps the biggest lesson was that building a game is fundamentally an integration problem.</p>
+            <p>
+              Code, art, music, narrative, infrastructure and player experience can each work individually and still fail when combined.
+            </p>
+            <p>The real challenge is making all of them work <strong>together</strong>.</p>
+
+            <h2>Project Snapshot</h2>
+            <dl class="snapshot">
+              <div><dt>Project</dt><dd>PixelRift</dd></div>
+              <div><dt>Type</dt><dd>Independent 2D Pixel Platformer</dd></div>
+              <div><dt>Platform</dt><dd>Windows</dd></div>
+              <div><dt>Technology</dt><dd>Python, Pygame-CE</dd></div>
+              <div><dt>Distribution</dt><dd>Steam</dd></div>
+              <div><dt>Steam App ID</dt><dd>4846670</dd></div>
+              <div><dt>Status</dt><dd>In Development</dd></div>
+              <div><dt>Target Release</dt><dd>December 2026</dd></div>
+            </dl>
+
+            <h2>Follow PixelRift</h2>
+            <p>Follow PixelRift for development updates, gameplay previews, announcements and progress toward release.</p>
+            <div class="social-btns">
+              <a href="https://store.steampowered.com/app/4846670/PixelRift/" class="social-btn steam" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>
+                <span><small>Wishlist on</small>Steam</span>
+              </a>
+              <a href="https://discord.com/invite/kE9Crzmahv" class="social-btn discord" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+                <span><small>Join the</small>Discord</span>
+              </a>
+              <a href="https://www.youtube.com/@AniGamer-fe4lz" class="social-btn youtube" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span><small>Watch on</small>YouTube</span>
+              </a>
+            </div>
+
+            <h2>Closing Thoughts</h2>
+            <p>PixelRift started with a straightforward goal: build a platformer.</p>
+            <p>It became an opportunity to experience almost every stage of taking a digital product from an idea toward release.</p>
+            <p>
+              I have designed levels, programmed mechanics, developed enemies, refined visual assets, considered accessibility, worked through authentication problems, prepared Steam builds, designed the game&rsquo;s fictional universe and thought about how the project could expand beyond a single title.
+            </p>
+            <p>There are still things to build, balance and improve before release.</p>
+            <p>But that is also what makes PixelRift one of the most valuable projects I have worked on.</p>
+            <p>It isn&rsquo;t just a game I designed.</p>
+            <p><strong>It is a product I am building from the ground up.</strong></p>
+
+            <div class="cta">
+              <div class="cta-eye">Coming December 2026</div>
+              <h2>PixelRift is releasing in December 2026! Stay tuned!</h2>
+              <div class="cta-btns">
+                <a href="index.html" class="cta-button">More Articles &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content">
+          <div class="branding">
+            <h3 class="name">Aniruddha Bose</h3>
+            <p class="tagline">Building the future, one project at a time.</p>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/Aniruddha-Bose" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="mailto:aniruddha.bose@example.com" class="social-link" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="copyright">
+          <p>&copy; <span data-year></span> Aniruddha Bose. All rights reserved.</p>
+          <p class="made-with">
+            Made with
+            <span class="heart"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+            and code
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
