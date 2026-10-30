@@ -31,7 +31,7 @@ var ARTICLES = [
     category: 'Fiction',
     title: 'The Shadow of Elarion',
     excerpt:
-      'An original fantasy story, told across 18 illustrated pages. Open it in the page-flip reader and step into the world of Elarion.',
+      'An original fantasy story, written as my entry for Writathon 11.0 in Singapore. Told across 18 illustrated pages — open it in the page-flip reader and step into the world of Elarion.',
     image: '../assets/book/elarion/page-01.jpg',
     tags: ['Fiction', 'Fantasy', 'Short Story', 'Writing'],
     published: '2026-07-11',

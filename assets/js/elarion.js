@@ -17,9 +17,10 @@
   var indicator = document.getElementById('page-indicator');
   var zoomInBtn = document.getElementById('zoom-in');
   var zoomOutBtn = document.getElementById('zoom-out');
-  var zoomResetBtn = document.getElementById('zoom-reset');
   var zoomLabel = document.getElementById('zoom-label');
   var handBtn = document.getElementById('tool-hand');
+  var fullscreenBtn = document.getElementById('fullscreen');
+  var reader = frame.closest('.reader');
 
   var current = 1;
   var scale = 1, tx = 0, ty = 0;
@@ -131,7 +132,35 @@
   // --- Zoom ---
   zoomInBtn.addEventListener('click', function () { setZoom(scale + 0.25); });
   zoomOutBtn.addEventListener('click', function () { setZoom(scale - 0.25); });
-  zoomResetBtn.addEventListener('click', function () { resetZoom(); updateChrome(); });
+  zoomLabel.addEventListener('click', function () { resetZoom(); updateChrome(); });
+
+  // --- Fullscreen ---
+  function fullscreenEl() {
+    return document.fullscreenElement || document.webkitFullscreenElement;
+  }
+  function toggleFullscreen() {
+    if (fullscreenEl()) {
+      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    } else {
+      (reader.requestFullscreen || reader.webkitRequestFullscreen).call(reader);
+    }
+  }
+  function onFullscreenChange() {
+    var on = !!fullscreenEl();
+    reader.classList.toggle('is-fullscreen', on);
+    fullscreenBtn.setAttribute('aria-label', on ? 'Exit fullscreen' : 'Enter fullscreen');
+    fullscreenBtn.title = on ? 'Exit fullscreen (F)' : 'Fullscreen (F)';
+    resetZoom();
+    updateChrome();
+  }
+  if (reader.requestFullscreen || reader.webkitRequestFullscreen) {
+    fullscreenBtn.addEventListener('click', toggleFullscreen);
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+  } else {
+    // e.g. iPhone Safari, which has no element fullscreen
+    fullscreenBtn.hidden = true;
+  }
 
   viewport.addEventListener('wheel', function (e) {
     e.preventDefault();
@@ -175,6 +204,7 @@
     else if (e.key === 'ArrowLeft') { flip(-1); }
     else if (e.key === '+' || e.key === '=') { setZoom(scale + 0.25); }
     else if (e.key === '-' || e.key === '_') { setZoom(scale - 0.25); }
+    else if ((e.key === 'f' || e.key === 'F') && !fullscreenBtn.hidden) { toggleFullscreen(); }
   });
 
   // --- Init ---
