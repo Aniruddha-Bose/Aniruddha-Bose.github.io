@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex, noai, noimageai" />
     <script>try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){}</script>
-    <title>PixelRift — Building an Indie Game from the Ground Up | Aniruddha Bose</title>
+    <title>PixelRift: Building My Own Indie Game from Scratch | Aniruddha Bose</title>
     <meta
       name="description"
-      content="PixelRift is an independent 2D pixel-art platformer built in Python and Pygame — from gameplay systems and level design to accounts, accessibility and shipping on Steam."
+      content="How I'm building PixelRift, a 2D pixel-art platformer, in Python and Pygame. Levels, enemies, accounts, accessibility and getting it onto Steam."
     />
     <meta name="keywords" content="PixelRift, indie game, pixel art, platformer, Python, Pygame, game development, Steam" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/styles.css?v=20261101d" />
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20261101e" />
     <meta name="theme-color" content="#6366f1" />
   </head>
   <body>
@@ -53,9 +53,9 @@
               <span class="dot">&bull;</span>
               <span>7 min read</span>
             </div>
-            <h1 class="post-title">PixelRift — Building an Indie Game from the Ground Up</h1>
+            <h1 class="post-title">PixelRift: Building My Own Indie Game from Scratch</h1>
             <p class="post-subtitle">
-              From an idea to a complete game &mdash; an independent 2D pixel-art platformer, built in Python and Pygame and heading to Steam.
+              How a small idea turned into a full 2D pixel-art platformer, made in Python and Pygame and on its way to Steam.
             </p>
             <div class="tags">
               <span class="tag">Game Dev</span>
@@ -69,46 +69,46 @@
           <div class="body">
             <img class="post-hero pixel" src="../assets/img/pixelrift.jpg" alt="PixelRift title art over forest, desert, polar and cave scenery" width="460" height="215" />
             <p class="lead">
-              <strong>PixelRift</strong> is an independent 2D pixel-art platformer built around a simple idea: take the familiarity of classic platforming and gradually introduce more challenging mechanics, environments and obstacles.
+              <strong>PixelRift</strong> is an indie 2D pixel-art platformer I&rsquo;ve been making. The idea is simple. It starts out feeling like the classic platformers everyone knows, and then it slowly throws harder mechanics, places and obstacles at you.
             </p>
             <p>
-              What started as a small game-development experiment evolved into a much larger project involving <strong>gameplay programming, level design, visual design, backend systems, accessibility, player accounts, testing, deployment and Steam publishing</strong>.
+              It began as a small experiment to see if I could make a game at all. It kept growing. By now I&rsquo;ve had to deal with <strong>coding the gameplay, building levels, drawing the art, setting up player accounts, adding accessibility options, testing, and figuring out how to publish on Steam</strong>.
             </p>
             <p>
-              Rather than treating PixelRift purely as a game, I approached it as a complete software product &mdash; designing not only what happens when the player presses &ldquo;Play,&rdquo; but also the systems and infrastructure needed to turn a collection of code and assets into a game that can actually be distributed to players.
-            </p>
-
-            <h2>The Concept</h2>
-            <p>PixelRift is a 2D platformer built around exploration, movement and increasingly challenging levels.</p>
-            <p>
-              The game begins with relatively straightforward platforming but gradually introduces more complex environments, enemies, hazards and mechanics.
-            </p>
-            <p>
-              One of my main goals was to make progression feel meaningful. Instead of simply increasing enemy health or making jumps longer, later levels introduce new combinations of mechanics that require the player to use what they have already learned in different ways.
-            </p>
-            <p>
-              This meant thinking carefully about how mechanics are introduced, how players learn them and how they can later be combined to create more difficult challenges.
+              Somewhere along the way I realised that making the game fun was only half the work. The other half was everything around it, the stuff you need before a folder full of code and sprites becomes something people can actually download and play.
             </p>
 
-            <h2>Designing the Levels</h2>
-            <p>PixelRift is structured around a sequence of increasingly difficult environments.</p>
+            <h2>The Idea</h2>
+            <p>At its heart PixelRift is about exploring, moving well and getting through levels that keep getting harder.</p>
             <p>
-              Earlier regions such as the <strong>Forest, Desert and Polar regions</strong> introduce the player to the game&rsquo;s core movement and platforming systems.
+              The first levels are pretty basic platforming. After that, new environments, enemies, hazards and mechanics start showing up.
             </p>
             <p>
-              Later environments include the <strong>Swamp, Volcano, Ocean and Sky</strong>, followed by more challenging areas such as the <strong>Crystal Caverns, Clockwork Factory and Shadow Stronghold</strong>.
-            </p>
-            <p>Each environment is designed to feel mechanically different rather than simply being a visual reskin.</p>
-            <p>
-              Different levels introduce combinations of environmental hazards, enemies, moving platforms, gravity-altering mechanics, bounce pads and other obstacles. Parallax backgrounds, lighting elements and environmental animation also help give each region its own visual identity.
+              I really wanted the progression to feel like it means something. I didn&rsquo;t want later levels to just give enemies more health or make the jumps longer. So instead they mix mechanics together in new ways, and you have to use what you&rsquo;ve already learned differently.
             </p>
             <p>
-              The challenge is making every new environment feel different while keeping the fundamental controls familiar to the player.
+              That made me think a lot about the order I introduce things in, how a player picks each one up, and how I can combine them later to make tougher challenges.
+            </p>
+
+            <h2>Making the Levels</h2>
+            <p>The game is split into a run of environments, and each one is harder than the last.</p>
+            <p>
+              The early ones, the <strong>Forest, Desert and Polar regions</strong>, teach you the basic movement and platforming.
+            </p>
+            <p>
+              After those come the <strong>Swamp, Volcano, Ocean and Sky</strong>, and then the really tough areas: the <strong>Crystal Caverns, Clockwork Factory and Shadow Stronghold</strong>.
+            </p>
+            <p>I didn&rsquo;t want any of them to be the same level with new colours. Each one should actually play differently.</p>
+            <p>
+              Levels mix up hazards, enemies, moving platforms, gravity-changing mechanics, bounce pads and other obstacles. I also used parallax backgrounds, lighting and little animations in the scenery so every region has its own look.
+            </p>
+            <p>
+              The tricky part is keeping each new place fresh while the controls stay the same, so the player never feels lost.
             </p>
 
             <h2>Gameplay and Systems</h2>
-            <p>Developing PixelRift meant building far more than a character that could run and jump.</p>
-            <p>The game required interconnected systems for:</p>
+            <p>I quickly found out that a game needs a lot more than a character who can run and jump.</p>
+            <p>Here&rsquo;s what PixelRift needed, and most of these depend on each other:</p>
             <ul>
               <li>Player movement, physics and collision detection</li>
               <li>Enemy behaviour and boss encounters</li>
@@ -124,95 +124,95 @@
               <li>Save and progression systems</li>
               <li>Game distribution and update management</li>
             </ul>
-            <p>One of the biggest lessons from the project was how quickly seemingly small features become interconnected.</p>
+            <p>The thing that surprised me most was how fast small features get tangled up with each other.</p>
             <p>
-              A new movement mechanic, for example, does not affect only the player controller. It can influence level geometry, enemy placement, animation timing, collision handling, accessibility, testing and difficulty balancing.
+              Say I add a new movement mechanic. It doesn&rsquo;t just change the player code. It can mess with the shape of levels, where enemies go, animation timing, collisions, accessibility, testing and how hard everything is.
             </p>
-            <p>Game development therefore became an exercise in <strong>systems thinking</strong>.</p>
+            <p>So I had to get used to thinking about how the whole game fits together, not just one piece at a time.</p>
 
-            <h2>Building with Python and Pygame</h2>
-            <p>PixelRift is being developed using <strong>Python and Pygame</strong>.</p>
+            <h2>Why Python and Pygame</h2>
+            <p>I&rsquo;m making PixelRift in <strong>Python and Pygame</strong>.</p>
             <p>
-              Using Pygame provided a relatively low-level environment compared with larger commercial game engines. Many systems that an engine might normally provide had to be designed or implemented directly.
+              Pygame is a lot more bare-bones than the big commercial engines. Loads of things an engine would normally hand you, I had to design and code myself.
             </p>
             <p>
-              This included managing the game loop, rendering, sprites, collision behaviour, input handling, animation states, level logic and other gameplay systems.
+              That meant writing my own game loop, plus handling rendering, sprites, collisions, input, animation states, level logic and the rest of the gameplay code.
             </p>
-            <p>That constraint became one of the project&rsquo;s strengths.</p>
+            <p>Honestly, that ended up being a good thing.</p>
             <p>
-              Instead of relying entirely on engine abstractions, developing PixelRift required understanding how the individual components of a 2D game interact underneath the surface.
+              Since I couldn&rsquo;t lean on an engine to do it all for me, I had to properly understand how the parts of a 2D game work together under the hood.
             </p>
-            <p>The result has been a project combining software engineering with creative design.</p>
+            <p>It&rsquo;s made the project a mix of real programming and creative design, which is what I enjoy most.</p>
 
-            <h2>Designing Enemies and Bosses</h2>
+            <h2>Enemies and Bosses</h2>
             <p>
-              Enemies were designed around the environments and gameplay challenges of their respective levels rather than existing as interchangeable obstacles.
+              I built each enemy around the level it lives in. I didn&rsquo;t want them to be generic obstacles you could swap anywhere.
             </p>
             <p>
-              Different regions introduce different enemy types, movement patterns and attacks. Some enemies create direct threats, while others are designed to interact with platforming challenges or force the player to change how they move through a level.
+              Each region has its own enemy types, movement patterns and attacks. Some enemies just come at you. Others are there to mess with the platforming, or to make you change the way you move through the level.
             </p>
-            <p>Boss encounters required another layer of design.</p>
+            <p>Bosses were harder to get right.</p>
             <p>
-              A boss needs to be difficult without feeling unpredictable or unfair. Attacks therefore need to communicate clearly enough for players to recognize patterns, react and gradually improve with each attempt.
+              A boss should be tough, but it shouldn&rsquo;t feel random or unfair. The attacks have to be clear enough that you can spot the pattern, react to it and get a bit better every time you try.
             </p>
-            <p>Animations, attack timing, movement, environmental interaction and visual feedback all have to work together.</p>
-            <p>This reinforced an important principle throughout development:</p>
+            <p>To pull that off, the animations, attack timing, movement, the way the boss interacts with the level and the visual feedback all have to line up.</p>
+            <p>That boss work kept bringing me back to one rule I tried to stick to the whole time:</p>
             <div class="callout">
-              <div class="callout-lbl">Design principle</div>
-              <p><strong>Difficulty should come from mastering mechanics, not from confusing the player.</strong></p>
+              <div class="callout-lbl">A rule I kept coming back to</div>
+              <p><strong>The game should be hard because you&rsquo;re still learning the mechanics, and never because it confused you.</strong></p>
             </div>
 
-            <h2>Creating a Consistent Visual Language</h2>
-            <p>Pixel art looks simple from a distance.</p>
-            <p>In practice, maintaining visual consistency across a game is surprisingly difficult.</p>
+            <h2>Keeping the Art Consistent</h2>
+            <p>Pixel art looks easy when you see it from far away.</p>
+            <p>Keeping it all consistent across a whole game is a lot harder than I expected.</p>
             <p>
-              Coins, gems, enemies, environments, user-interface elements and effects all need to look like they belong to the same game.
+              Coins, gems, enemies, backgrounds, menus and effects all have to look like they came from the same game.
             </p>
             <p>
-              Even something as small as the design of an in-game coin raised questions about readability, symbolism, accessibility and whether the design could accidentally resemble real-world currency.
+              Even the in-game coin made me stop and think. Could you read it easily? What should the symbol on it be? Would it work for players with accessibility needs? And could it end up looking too much like real money by accident?
             </p>
-            <p>The project therefore involved repeated cycles of:</p>
+            <p>So I kept going round the same loop:</p>
             <ol class="flow" aria-label="Asset design cycle">
               <li>Design</li>
               <li>Test in-game</li>
               <li>Evaluate</li>
               <li>Refine</li>
             </ol>
-            <p>Assets that looked good in isolation did not necessarily work when placed inside an actual level.</p>
-            <p>Testing them in context became an essential part of the design process.</p>
+            <p>A sprite could look great on its own and then look wrong once I dropped it into a real level.</p>
+            <p>So I got into the habit of always testing art inside the game before calling it done.</p>
 
-            <h2>Accessibility and Player Experience</h2>
-            <p>Another important part of PixelRift has been thinking about how different players experience the game.</p>
-            <p>Accessibility cannot simply be added at the end of development as a single toggle.</p>
-            <p>Settings need to distinguish between genuine accessibility features and general gameplay or visual preferences.</p>
-            <p>The user experience also extends beyond gameplay itself.</p>
+            <h2>Accessibility and How It Feels to Play</h2>
+            <p>I&rsquo;ve also spent a lot of time thinking about how different people will experience the game.</p>
+            <p>You can&rsquo;t just tack accessibility on at the end as one switch in the settings.</p>
+            <p>I had to separate the settings that are real accessibility features from the ones that are just gameplay or visual preferences.</p>
+            <p>And how the game feels isn&rsquo;t only about the gameplay.</p>
             <p>
-              Menus, account creation, error messages, authentication, visual feedback and configuration all contribute to whether the game feels polished.
+              The menus, signing up for an account, error messages, logging in, visual feedback and the settings screens all make a difference to whether the game feels finished.
             </p>
-            <p>This shifted my perspective from simply asking:</p>
+            <p>I used to mostly ask myself:</p>
             <p class="question"><em>&ldquo;Does the game work?&rdquo;</em></p>
-            <p>to asking:</p>
+            <p>Now I ask:</p>
             <p class="question"><em>&ldquo;Does the player understand what is happening?&rdquo;</em></p>
-            <p>Those are very different questions.</p>
+            <p>They sound similar, but the answers can be really different.</p>
 
-            <h2>Backend and Account Systems</h2>
-            <p>PixelRift also expanded beyond purely local gameplay.</p>
+            <h2>Accounts and the Backend</h2>
+            <p>At some point PixelRift stopped being only a game that runs on your own computer.</p>
             <p>
-              Player account functionality introduced backend considerations such as authentication and email verification. <strong>Firebase</strong> was explored for authentication infrastructure, including the challenges involved in reliable verification emails and custom transactional email delivery.
+              Adding player accounts meant I had to think about backend stuff like logging in and verifying email addresses. I tried out <strong>Firebase</strong> for authentication, and ran into the problems of getting verification emails to arrive reliably and sending my own custom emails.
             </p>
-            <p>This introduced a completely different category of engineering concerns.</p>
+            <p>This was a whole different kind of problem from anything else in the game.</p>
             <p>
-              A platformer may appear to be entirely about graphics and physics, but once accounts and online functionality are introduced, issues such as authentication, abuse prevention, privacy and service reliability become part of the product architecture.
+              You&rsquo;d think a platformer is all graphics and physics. Once you add accounts and online features, though, you suddenly have to care about authentication, stopping abuse, privacy and keeping the service running, and those become part of how the whole thing is built.
             </p>
             <p>
-              It demonstrated how quickly a game can grow from a standalone program into a system involving multiple technologies and services.
+              It showed me how fast a game can go from one program on your computer to something that depends on several different technologies and services.
             </p>
 
-            <h2>Preparing for Steam</h2>
+            <h2>Getting Ready for Steam</h2>
             <p>
-              One of the most valuable parts of the project has been learning what happens between <strong>finishing a build</strong> and <strong>shipping a product</strong>.
+              Some of the most useful stuff I&rsquo;ve learned is what happens after you <strong>finish a build</strong> and before you can actually <strong>ship it</strong>.
             </p>
-            <p>PixelRift is being prepared for distribution through Steam, which introduced another set of workflows:</p>
+            <p>I&rsquo;m getting PixelRift ready to release on Steam, and that came with its own set of steps:</p>
             <ol class="flow" aria-label="Steam release pipeline">
               <li>Game build</li>
               <li>Depot upload</li>
@@ -224,21 +224,20 @@
               <li>Release</li>
             </ol>
             <p>
-              This involved learning about build branches, depots, internal testing, store assets, library capsules, demo submissions and release requirements.
+              I had to learn about build branches, depots, internal testing, store art, library capsules, submitting a demo and what Steam requires before release.
             </p>
             <p>
-              It also meant considering the less glamorous but essential parts of releasing software: Terms of Service, Privacy Policy, online-content rules and player-data handling.
+              There was also the boring (but important) side of releasing anything, like writing Terms of Service and a Privacy Policy, following the rules for online content and handling player data properly.
             </p>
-            <p>Building the game was only one part of the challenge.</p>
-            <p>Shipping it was another engineering problem entirely.</p>
+            <p>Making the game was one big job. Getting it out to players turned out to be a separate problem I had to solve on top of that.</p>
 
-            <h2>Iteration and Problem Solving</h2>
-            <p>One of the most important parts of developing PixelRift has been learning to iterate.</p>
-            <p>Features rarely work perfectly the first time.</p>
+            <h2>Trying, Failing and Fixing</h2>
+            <p>The biggest habit PixelRift taught me is to keep iterating.</p>
+            <p>Hardly anything works perfectly the first time.</p>
             <p>
-              A mechanic might function correctly but feel awkward to play. An asset might look good on its own but become difficult to see against a particular background. A menu might technically work while still being confusing to navigate.
+              A mechanic can work fine and still feel clunky to play. A sprite can look nice by itself and then be hard to see on a certain background. A menu can technically do its job and still confuse people.
             </p>
-            <p>Development therefore became a continuous process of:</p>
+            <p>So most of my time goes into this loop:</p>
             <ol class="flow" aria-label="Iteration loop">
               <li>Build</li>
               <li>Test</li>
@@ -246,28 +245,28 @@
               <li>Improve</li>
               <li>Test again</li>
             </ol>
-            <p>Sometimes this meant fixing bugs. Other times it meant completely reconsidering an earlier design decision.</p>
+            <p>Sometimes that just means fixing a bug. Other times I end up rethinking a decision I made much earlier.</p>
             <p>
-              Learning when to improve an existing idea and when to replace it entirely became an important part of the development process.
+              Working out when to keep tweaking an idea and when to throw it out and start over is something I&rsquo;m still getting better at.
             </p>
 
             <h2>What I Learned</h2>
-            <p>PixelRift became much more than an exercise in programming.</p>
-            <p>It required me to work across several disciplines simultaneously:</p>
+            <p>PixelRift ended up teaching me way more than just programming.</p>
+            <p>I had to switch between a lot of different jobs, often in the same week:</p>
             <ul>
-              <li><strong>Software Engineering</strong> &mdash; designing and maintaining interconnected gameplay systems.</li>
-              <li><strong>Game Design</strong> &mdash; balancing mechanics, difficulty and player feedback.</li>
-              <li><strong>Product Design</strong> &mdash; thinking about the entire player journey rather than individual features.</li>
-              <li><strong>Visual Design</strong> &mdash; maintaining a coherent pixel-art style across environments and UI.</li>
-              <li><strong>Backend Engineering</strong> &mdash; integrating authentication and supporting online functionality.</li>
-              <li><strong>DevOps and Distribution</strong> &mdash; moving builds through testing and Steam deployment workflows.</li>
-              <li><strong>Testing and Iteration</strong> &mdash; identifying problems and continuously refining mechanics, visuals and user experience.</li>
+              <li><strong>Software Engineering:</strong> writing gameplay code where lots of parts depend on each other, and keeping it working.</li>
+              <li><strong>Game Design:</strong> balancing the mechanics and difficulty, and making sure the player gets clear feedback.</li>
+              <li><strong>Product Design:</strong> thinking about everything a player goes through from start to finish, not just one feature at a time.</li>
+              <li><strong>Visual Design:</strong> keeping one pixel-art style across every environment and the menus.</li>
+              <li><strong>Backend Engineering:</strong> hooking up authentication and getting the online features working.</li>
+              <li><strong>DevOps and Distribution:</strong> moving builds through testing and up to Steam.</li>
+              <li><strong>Testing and Iteration:</strong> finding what&rsquo;s wrong and fixing it, over and over, in the mechanics, the art and the menus.</li>
             </ul>
-            <p>Perhaps the biggest lesson was that building a game is fundamentally an integration problem.</p>
+            <p>If I had to pick one lesson, it&rsquo;s that making a game is mostly about getting lots of pieces to fit.</p>
             <p>
-              Code, art, music, infrastructure and player experience can each work individually and still fail when combined.
+              The code, art, music, backend and the way the game feels can each be fine on their own and still fall apart once you put them together.
             </p>
-            <p>The real challenge is making all of them work <strong>together</strong>.</p>
+            <p>Getting all of it to work <strong>together</strong> is the hard part.</p>
 
             <h2>Project Snapshot</h2>
             <dl class="snapshot">
@@ -282,7 +281,7 @@
             </dl>
 
             <h2>Follow PixelRift</h2>
-            <p>Follow PixelRift for development updates, gameplay previews, announcements and progress toward release.</p>
+            <p>If you want to see how it&rsquo;s going, I post dev updates, gameplay previews and news here as I get closer to release.</p>
             <div class="social-btns">
               <a href="https://store.steampowered.com/app/4846670/PixelRift/" class="social-btn steam" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>
@@ -299,18 +298,17 @@
             </div>
 
             <h2>Closing Thoughts</h2>
-            <p>PixelRift started with a straightforward goal: build a platformer.</p>
-            <p>It became an opportunity to experience almost every stage of taking a digital product from an idea toward release.</p>
+            <p>When I started, all I wanted was to make a platformer.</p>
+            <p>Since then I&rsquo;ve ended up going through nearly every step of taking something from an idea to a real release.</p>
             <p>
-              I have designed levels, programmed mechanics, developed enemies, refined visual assets, considered accessibility, worked through authentication problems and prepared builds for Steam.
+              I&rsquo;ve built levels, coded mechanics, made enemies, redrawn a lot of art, thought about accessibility, fought with authentication and got builds ready for Steam.
             </p>
             <p>
-              Along the way, I learned that completing a project of this scale requires much more than getting the code to work. It requires constant testing, iteration and decisions about how dozens of individual systems should work together.
+              The main thing I&rsquo;ve learned is that finishing something this big takes more than getting the code to run. You have to keep testing, keep changing things and keep deciding how dozens of separate parts should fit together.
             </p>
-            <p>There are still things to build, balance and improve before release.</p>
-            <p>But that is also what makes PixelRift one of the most valuable projects I have worked on.</p>
-            <p>It isn&rsquo;t just a game I designed.</p>
-            <p><strong>It is a product I am building from the ground up.</strong></p>
+            <p>There&rsquo;s still stuff to build, balance and fix before it comes out.</p>
+            <p>I think that&rsquo;s exactly why it&rsquo;s the project I&rsquo;ve learned the most from.</p>
+            <p><strong>I&rsquo;m building it from the ground up, from the first line of code all the way to the Steam page.</strong></p>
 
             <div class="cta">
               <div class="cta-eye">Coming December 2026</div>
@@ -355,6 +353,6 @@
       </div>
     </footer>
 
-    <script src="../assets/js/main.js?v=20261101d"></script>
+    <script src="../assets/js/main.js?v=20261101e"></script>
   </body>
 </html>

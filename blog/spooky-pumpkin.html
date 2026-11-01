@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex, noai, noimageai" />
     <script>try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){}</script>
-    <title>Spooky Pumpkin — My Entry for the Playto Labs Robo Halloween Challenge 2026 | Aniruddha Bose</title>
+    <title>Spooky Pumpkin: My Entry for the Playto Labs Robo Halloween Challenge 2026 | Aniruddha Bose</title>
     <meta
       name="description"
       content="Spooky Pumpkin is an interactive Halloween pumpkin that lights up green eyes and plays a cackling laugh when someone walks past, built with an IR sensor, LEDs, Python, PySerial and Pygame."
@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/styles.css?v=20261101d" />
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20261101e" />
     <meta name="theme-color" content="#6366f1" />
   </head>
   <body>
@@ -53,8 +53,8 @@
               <span class="dot">&bull;</span>
               <span>4 min read</span>
             </div>
-            <h1 class="post-title">Spooky Pumpkin &mdash; My Entry for the Playto Labs Robo Halloween Challenge 2026</h1>
-            <p class="post-subtitle">Bringing Halloween to life with electronics, sensors, and Python!</p>
+            <h1 class="post-title">Spooky Pumpkin: My Entry for the Playto Labs Robo Halloween Challenge 2026</h1>
+            <p class="post-subtitle">A paper pumpkin that notices you walking past and laughs at you.</p>
             <div class="tags">
               <span class="tag">Robotics</span>
               <span class="tag">Electronics</span>
@@ -68,7 +68,7 @@
             <div class="video-embed">
               <iframe
                 src="https://www.youtube-nocookie.com/embed/ZUetSRraCK0"
-                title="Spooky Pumpkin demo &mdash; Playto Labs Robo Halloween Challenge 2026"
+                title="Spooky Pumpkin demo for the Playto Labs Robo Halloween Challenge 2026"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
@@ -77,28 +77,28 @@
             </div>
 
             <p class="lead">
-              For the <strong>Playto Labs Robo Halloween Challenge 2026</strong>, I decided to build something spooky and interactive &mdash; a pumpkin that comes to life whenever someone walks past it!
+              For the <strong>Playto Labs Robo Halloween Challenge 2026</strong>, I wanted to make something spooky that actually reacts to you. So I built a pumpkin that waits for someone to walk past and then laughs at them.
             </p>
             <p>
-              My project, <strong>Spooky Pumpkin</strong>, combines an infrared (IR) sensor, green LEDs, and Python-powered sound effects to create a fun Halloween surprise.
+              It's called <strong>Spooky Pumpkin</strong>. There's an infrared (IR) sensor and some green LEDs on the electronics side, and the sound comes from a Python program.
             </p>
 
             <h2>The Idea</h2>
             <div class="panel">
               <div class="panel-media">
                 <img src="../assets/img/spooky-pumpkin.jpg" alt="The Spooky Pumpkin: an orange paper-lantern pumpkin with a black jack-o'-lantern face, with the IR sensor peeking out underneath" width="1200" height="1600" />
-                <div class="panel-credit">The finished Spooky Pumpkin &mdash; the IR sensor sits just under its chin.</div>
+                <div class="panel-credit">The finished Spooky Pumpkin, with the IR sensor tucked just under its chin.</div>
               </div>
               <div class="panel-text">
-                <p>I wanted to create a Halloween decoration that could react to people instead of simply sitting in one place.</p>
+                <p>Most Halloween decorations just sit there. I wanted one that would notice people.</p>
                 <p>
-                  The idea was simple: when someone walks past the pumpkin, its eyes should suddenly glow green while a creepy cackling sound plays, giving them an unexpected scare!
+                  The plan was pretty simple. Someone walks by, the pumpkin's eyes glow green, and a creepy cackle plays. Hopefully they jump a little.
                 </p>
               </div>
             </div>
 
             <h2>How It Works</h2>
-            <p>The project uses a combination of hardware and software to detect movement and trigger spooky effects.</p>
+            <p>Here's what happens, and which part handles each step.</p>
             <ol class="flow" aria-label="What happens when someone walks past">
               <li>Someone walks past</li>
               <li>IR sensor triggers</li>
@@ -106,13 +106,13 @@
               <li>Cackling laugh plays</li>
             </ol>
             <ol>
-              <li><strong>IR Sensor:</strong> Detects when someone passes in front of the pumpkin.</li>
-              <li><strong>Green LEDs:</strong> Two green LEDs light up when the sensor is triggered, giving the pumpkin an eerie glow.</li>
-              <li><strong>Python and PySerial:</strong> PySerial allows the Python program to receive sensor information through serial communication.</li>
-              <li><strong>Pygame:</strong> The Pygame library plays a creepy cackling sound when the sensor detects someone.</li>
+              <li><strong>IR Sensor:</strong> Picks up anyone passing in front of the pumpkin.</li>
+              <li><strong>Green LEDs:</strong> There are two of them, and they're the eyes. They switch on when the sensor is triggered, which gives the pumpkin a nice eerie glow.</li>
+              <li><strong>Python and PySerial:</strong> The sensor readings reach my Python program over serial communication. PySerial is the library that reads them.</li>
+              <li><strong>Pygame:</strong> Once Python knows someone is there, Pygame plays the cackling sound.</li>
             </ol>
             <p>
-              When someone walks past the IR sensor, the pumpkin's green LEDs turn on and the cackling sound plays, making it seem as though the pumpkin has suddenly come alive!
+              From the outside you don't see any of that. It just looks like the pumpkin woke up and spotted you.
             </p>
 
             <h2>Combining Hardware and Software</h2>
@@ -122,30 +122,30 @@
                 <div class="panel-credit">Inside the pumpkin: the Arduino Uno, breadboard and the two green LEDs that become its eyes.</div>
               </div>
               <div class="panel-text">
-                <p>One of the most interesting parts of this project was combining physical electronics with Python programming.</p>
+                <p>The part I liked most was getting real electronics and my Python code to talk to each other.</p>
                 <p>
-                  The IR sensor provides the input, the LEDs create the visual effect, and Python handles the sound using <strong>PySerial and Pygame</strong>.
+                  The IR sensor is the input and the LEDs are what you see. The sound is all done in Python with <strong>PySerial and Pygame</strong>.
                 </p>
-                <p>By combining these components, I was able to turn a simple Halloween pumpkin into an interactive decoration.</p>
+                <p>Without that connection it would just be a paper pumpkin with some lights in it.</p>
               </div>
             </div>
 
             <h2>What I Learned</h2>
-            <p>This project helped me explore several concepts, including:</p>
+            <p>Stuff I picked up along the way:</p>
             <ul>
-              <li>Using IR sensors to detect nearby objects or people.</li>
-              <li>Controlling LEDs based on sensor input.</li>
-              <li>Using PySerial for communication between hardware and Python.</li>
+              <li>How an IR sensor can tell when a person or object is nearby.</li>
+              <li>Switching LEDs on based on what a sensor reads.</li>
+              <li>Using PySerial to get data from the hardware into Python.</li>
               <li>Playing sound effects with Pygame.</li>
-              <li>Combining hardware and software to create an interactive experience.</li>
+              <li>Making hardware and software work together on one build.</li>
             </ul>
 
-            <h2>Final Thoughts</h2>
+            <h2>Wrapping Up</h2>
             <p>
-              Building the Spooky Pumpkin was a fun way to experiment with robotics, electronics, and programming while getting into the Halloween spirit.
+              This was a really fun one to make. I got to mess around with electronics and code, and it was a good excuse to get into the Halloween mood.
             </p>
-            <p>What started as a simple idea became an interactive Halloween decoration with glowing green eyes and a creepy laugh!</p>
-            <p>I'm glad I got to bring this idea to life for the <strong>Playto Labs Robo Halloween Challenge 2026</strong>.</p>
+            <p>Now I've got a pumpkin with glowing green eyes and a creepy laugh, which is pretty much exactly what I was going for.</p>
+            <p>I'm happy with how it turned out as my entry for the <strong>Playto Labs Robo Halloween Challenge 2026</strong>.</p>
 
             <dl class="snapshot">
               <div><dt>Project</dt><dd>Spooky Pumpkin</dd></div>
@@ -156,7 +156,7 @@
 
             <div class="cta">
               <div class="cta-eye">Happy Halloween! &#127875;&#128123;</div>
-              <h2>Watch the Spooky Pumpkin in action!</h2>
+              <h2>Watch (and hear) the Spooky Pumpkin in action</h2>
               <div class="cta-btns">
                 <a href="https://www.youtube.com/watch?v=ZUetSRraCK0" class="cta-button" target="_blank" rel="noopener noreferrer">Watch on YouTube &rarr;</a>
                 <a href="../competitions.html" class="btn-outline">See My Competitions</a>
@@ -198,6 +198,6 @@
       </div>
     </footer>
 
-    <script src="../assets/js/main.js?v=20261101d"></script>
+    <script src="../assets/js/main.js?v=20261101e"></script>
   </body>
 </html>

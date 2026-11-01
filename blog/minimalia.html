@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex, noai, noimageai" />
     <script>try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){}</script>
-    <title>Minimalia — A Minimalist Web Browser | Aniruddha Bose</title>
+    <title>Minimalia: A Minimalist Web Browser | Aniruddha Bose</title>
     <meta
       name="description"
-      content="Minimalia is a browser designed around one idea: browsing should feel clean, calm, and distraction-free. A case study in minimalist product design."
+      content="Minimalia is a minimalist desktop web browser I built in Python with PyQtWebEngine, made to keep browsing simple and free of clutter."
     />
     <meta name="keywords" content="Minimalia, minimalist browser, UI/UX, product design, branding, case study" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/styles.css?v=20261101d" />
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20261101e" />
     <meta name="theme-color" content="#6366f1" />
   </head>
   <body>
@@ -53,9 +53,9 @@
               <span class="dot">&bull;</span>
               <span>6 min read</span>
             </div>
-            <h1 class="post-title">Minimalia — A Minimalist Web Browser</h1>
+            <h1 class="post-title">Minimalia: A Minimalist Web Browser</h1>
             <p class="post-subtitle">
-              A minimalist web browser I built in Python with PyQtWebEngine &mdash; rethinking browsing around one idea: it should feel clean, calm, and distraction-free.
+              A small, simple web browser I built in Python with PyQtWebEngine, because I wanted browsing to feel quiet again.
             </p>
             <div class="tags">
               <span class="tag">Coding</span>
@@ -67,51 +67,51 @@
 
           <div class="body">
             <p>
-              Minimalia is a desktop web browser I built in Python, designed around one simple idea: browsing should feel clean, calm, and distraction-free. Under the hood it embeds the Chromium engine through PyQtWebEngine, so it renders the modern web exactly like the big browsers do &mdash; just without the clutter around it.
+              Minimalia is a desktop web browser I made in Python. I built it because I wanted browsing to feel less cluttered and less distracting. It uses the Chromium engine through PyQtWebEngine, so websites show up exactly the way they do in the big browsers. What's different is everything around the page, which I kept as small as I could.
             </p>
             <p>
-              The project explores how unnecessary interface elements can be removed without making the browsing experience feel incomplete. Its visual design uses a dark interface, clear typography, restrained colour, and straightforward navigation to keep attention on the web content itself.
+              I wanted to see how much of the usual browser interface I could take away before it started to feel like something was missing. It has a dark theme, easy-to-read text and not too much colour, and the navigation works the way you'd expect. That way your attention stays on the website you're actually looking at.
             </p>
 
-            <h2>The Challenge</h2>
+            <h2>Why I Made It</h2>
             <p>
-              Modern browsers often include crowded toolbars, side panels, recommendations, and features that many users rarely use. The challenge was to create a browser experience that felt lightweight and simple while still remaining familiar and usable.
+              Most browsers these days have packed toolbars, side panels, recommendations and a bunch of features that a lot of people hardly ever touch. I wanted something that felt light and simple, but was still familiar enough that you wouldn't have to learn anything new to use it.
             </p>
 
-            <h2>The Approach</h2>
-            <p>I designed Minimalia with a strong focus on:</p>
+            <h2>What I Focused On</h2>
+            <p>While I was designing Minimalia, I kept coming back to a few things:</p>
             <ul>
-              <li>Minimal interface elements</li>
-              <li>Clear visual hierarchy</li>
-              <li>Simple and familiar navigation</li>
-              <li>Reduced visual distractions</li>
-              <li>A calm, modern design language</li>
+              <li>As few buttons and bars as possible</li>
+              <li>Making it obvious what matters on the screen</li>
+              <li>Navigation that works the way you'd expect</li>
+              <li>Fewer things pulling at your attention</li>
+              <li>A dark, modern look that doesn't shout at you</li>
             </ul>
             <p>
-              The branding and landing-page design reinforce the product philosophy: &ldquo;No clutter, no noise &mdash; just the web, minimal and clean.&rdquo;
+              I tried to get the same idea across in the branding and on the landing page. The tagline sums it up: &ldquo;No clutter, no noise. Just the web, minimal and clean.&rdquo;
             </p>
 
-            <h2>What I Worked On</h2>
+            <h2>What I Did</h2>
             <p>
-              I built Minimalia end to end &mdash; writing the application in Python, wiring up the browser engine, and designing the product concept, interface, and visual identity around a single goal: a focused alternative to feature-heavy browsers. That meant everything from the tab logic and settings screens to the branding and this landing page.
+              I made the whole thing myself. I wrote the app in Python, hooked up the browser engine, and came up with the idea, the interface and the overall look. I wanted it to be a more focused option for people who are tired of browsers that try to do everything. So I worked on pretty much every part of it, from how the tabs work and the settings screens to the branding and the landing page.
             </p>
 
-            <h2>How It's Built</h2>
+            <h2>How It Works</h2>
             <p>
-              Minimalia is a Python application built on <strong>PyQtWebEngine</strong> &mdash; the Qt binding that embeds Chromium (the same engine that powers Chrome and Edge) inside a native desktop window. That split is what makes the project work:
+              Minimalia is a Python app built on <strong>PyQtWebEngine</strong>. That's the Qt binding that puts Chromium (the same engine behind Chrome and Edge) inside a normal desktop window. Splitting the work up like this is really what makes the project possible:
             </p>
             <ul>
-              <li><strong>Chromium via QtWebEngine</strong> renders the actual web pages, so sites look and behave exactly as they should.</li>
-              <li><strong>Python and Qt</strong> build everything around the page &mdash; tabs, the address bar, settings, bookmarks, downloads &mdash; which is where the minimalist design lives.</li>
-              <li>Because I control the surrounding app, I can strip out clutter, add privacy features, and hook the ad blocker straight into the engine.</li>
+              <li><strong>Chromium via QtWebEngine</strong> handles the actual web pages, so sites look and work the way they're supposed to.</li>
+              <li><strong>Python and Qt</strong> handle everything around the page (tabs, the address bar, settings, bookmarks and downloads). That's where all the minimalist design happens.</li>
+              <li>Since the app around the page is mine, I can cut out clutter, add privacy features and plug the ad blocker straight into the engine.</li>
             </ul>
             <p>
-              Building on Chromium also sets the boundaries: a couple of the version 1.0.0 limits (like Google sign-in) come from QtWebEngine's policies, not from Minimalia itself.
+              Using Chromium does come with some limits, though. A couple of the things version 1.0.0 can't do yet (like Google sign-in) are down to QtWebEngine's policies rather than anything in Minimalia itself.
             </p>
 
-            <h2>What's Inside Version 1.0.0</h2>
+            <h2>What's in Version 1.0.0</h2>
             <p>
-              Minimalia 1.0.0 &mdash; the first public release, shipped on 28 April 2026 for Windows, macOS, and Linux &mdash; is calm on the surface but genuinely capable underneath.
+              Version 1.0.0 is the first public release. It came out on 28 April 2026 for Windows, macOS and Linux, and even though it looks simple, there's quite a lot packed in.
             </p>
 
             <h3>Browsing</h3>
@@ -119,7 +119,7 @@
               <li>A tabbed interface with close, reopen, and keyboard shortcuts</li>
               <li>Pinned tabs that survive across sessions, with accidental-close protection</li>
               <li>Duplicate a tab instantly (Ctrl+Shift+D) and full session restore on reopen</li>
-              <li>Private browsing in an isolated profile &mdash; no history or cookies kept</li>
+              <li>Private browsing in an isolated profile that doesn't keep any history or cookies</li>
               <li>Your choice of search engine: Google, DuckDuckGo, Bing, or a custom URL</li>
               <li>Three experience modes: Minimalia, Cleanups, and Default</li>
             </ul>
@@ -153,12 +153,12 @@
             </ul>
 
             <p>
-              It is honest about its edges, too: Google sign-in is currently blocked by Google's QtWebEngine policy, and Bing support is still experimental.
+              There are a couple of things that don't work properly yet. Google sign-in is blocked right now because of Google's QtWebEngine policy, and Bing support is still experimental.
             </p>
 
-            <h2>Project Goal</h2>
+            <h2>What I Was Going For</h2>
             <p>
-              The goal of Minimalia was not to add more features, but to reconsider which features genuinely improve the browsing experience&mdash;and remove everything else.
+              I didn't want to keep piling on features. I wanted to work out which ones actually make browsing better, and then get rid of the rest.
             </p>
 
             <div class="cta">
@@ -203,6 +203,6 @@
       </div>
     </footer>
 
-    <script src="../assets/js/main.js?v=20261101d"></script>
+    <script src="../assets/js/main.js?v=20261101e"></script>
   </body>
 </html>

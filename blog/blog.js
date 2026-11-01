@@ -1,13 +1,13 @@
-// Science Explorer Blog — article data + search/filter rendering.
+// Science Explorer Blog: article data + search/filter rendering.
 // To add an article: create its HTML page in this folder and add an entry below.
 
 var ARTICLES = [
   {
     url: 'spooky-pumpkin.html',
     category: 'Robotics',
-    title: 'Spooky Pumpkin — My Entry for the Playto Labs Robo Halloween Challenge 2026',
+    title: 'Spooky Pumpkin: My Entry for the Playto Labs Robo Halloween Challenge 2026',
     excerpt:
-      'A pumpkin that comes to life when someone walks past: an IR sensor, glowing green LED eyes, and a cackling laugh played by Python, PySerial and Pygame.',
+      'A paper pumpkin with an IR sensor inside. When someone walks by, its green LED eyes light up and it cackles at them, with Python, PySerial and Pygame handling the sound.',
     image: '../assets/img/spooky-pumpkin.jpg',
     tags: ['Robotics', 'Electronics', 'Python', 'Coding', 'Halloween'],
     published: '2026-11-01',
@@ -19,7 +19,7 @@ var ARTICLES = [
     category: 'Neuroscience',
     title: '166,000 Neurons, 125 Million Connections: Mapping a Fly’s Brain with AI',
     excerpt:
-      'Scientists have mapped every neuron and connection in an adult male fruit fly’s brain and nerve cord — and AI helped make it possible. Here is how, and why it matters.',
+      'Scientists have mapped every neuron and connection in an adult male fruit fly’s brain and nerve cord, and AI did a lot of the work. This is how they did it and why I think it’s a big deal.',
     image: 'https://www.genengnews.com/wp-content/uploads/2024/10/Low-Res_fw_50_L.jpg',
     tags: ['Neuroscience', 'AI', 'Biology', 'Connectomics'],
     published: '2026-09-26',
@@ -29,9 +29,9 @@ var ARTICLES = [
   {
     url: 'pixelrift.html',
     category: 'Game Dev',
-    title: 'PixelRift — Building an Indie Game from the Ground Up',
+    title: 'PixelRift: Building My Own Indie Game from Scratch',
     excerpt:
-      'A 2D pixel-art platformer built in Python and Pygame, with levels that keep introducing new mechanics. From gameplay systems and level design to player accounts and shipping on Steam.',
+      'My 2D pixel-art platformer, made in Python and Pygame, where every few levels throw something new at you. How I built it, from the gameplay and levels to player accounts and getting it onto Steam.',
     image: '../assets/img/pixelrift.jpg',
     tags: ['Game Dev', 'Python', 'Pygame', 'Coding', 'Pixel Art'],
     published: '2026-09-26',
@@ -43,7 +43,7 @@ var ARTICLES = [
     category: 'Fiction',
     title: 'The Shadow of Elarion',
     excerpt:
-      'An original fantasy story, written as my entry for Writathon 11.0 in Singapore. Told across 18 illustrated pages — open it in the page-flip reader and step into the world of Elarion.',
+      'A fantasy story I wrote as my entry for Writathon 11.0 in Singapore. It’s 18 illustrated pages long, and you can read it here in a page-flip reader.',
     image: '../assets/book/elarion/page-01.jpg',
     tags: ['Fiction', 'Fantasy', 'Short Story', 'Writing'],
     published: '2026-07-11',
@@ -55,7 +55,7 @@ var ARTICLES = [
     category: 'Black Holes',
     title: 'Black Holes: Where the Universe Breaks Its Own Rules',
     excerpt:
-      'What happens when gravity wins? Black holes are the most extreme objects in the universe — places where spacetime bends so hard that nothing, not even light, escapes. Here is the real science, with real images.',
+      'What happens when gravity wins? A black hole bends spacetime so hard that nothing gets out, not even light. Here’s the actual science behind them, with real telescope images.',
     image: 'https://cdn.eso.org/images/screen/eso1907a.jpg',
     tags: ['Black Holes', 'Stellar Physics', 'General Relativity'],
     published: '2026-03-01',
@@ -65,9 +65,9 @@ var ARTICLES = [
   {
     url: 'minimalia.html',
     category: 'Coding',
-    title: 'Minimalia — A Minimalist Web Browser',
+    title: 'Minimalia: A Minimalist Web Browser',
     excerpt:
-      'Minimalia is a browser project designed around one simple idea: browsing should feel clean, calm, and distraction-free. A case study in removing everything that gets in the way.',
+      'A desktop browser I built in Python because I wanted the web without all the clutter. What I took out, what I kept, and how it works under the hood.',
     image: '../assets/img/minimalia.png',
     tags: ['Coding', 'Python', 'App Development', 'Minimalism'],
     published: '2026-07-11',
