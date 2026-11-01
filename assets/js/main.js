@@ -15,6 +15,29 @@
   onScroll();
 })();
 
+// Light/dark theme toggle. The <head> of each page sets data-theme before the page
+// paints (saved choice, else the device setting); this just flips it and remembers.
+(function themeToggle() {
+  var button = document.querySelector('.theme-toggle');
+  if (!button) return;
+  var root = document.documentElement;
+
+  function label() {
+    var next = root.dataset.theme === 'light' ? 'dark' : 'light';
+    button.setAttribute('aria-label', 'Switch to ' + next + ' mode');
+    button.title = 'Switch to ' + next + ' mode';
+  }
+
+  button.addEventListener('click', function () {
+    root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+    try {
+      localStorage.setItem('theme', root.dataset.theme);
+    } catch (e) {}
+    label();
+  });
+  label();
+})();
+
 // Mobile menu toggle.
 (function mobileMenu() {
   var toggle = document.querySelector('.menu-toggle');
