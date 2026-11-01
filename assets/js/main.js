@@ -53,6 +53,27 @@
   });
 })();
 
+// Project counter: count the cards on the Projects page so the number never goes stale.
+// The number written in the HTML is the fallback (e.g. when opened from disk, where fetch is blocked).
+(function projectCount() {
+  var targets = document.querySelectorAll('[data-project-count]');
+  if (!targets.length || !window.fetch) return;
+
+  fetch('projects.html')
+    .then(function (res) {
+      return res.ok ? res.text() : Promise.reject();
+    })
+    .then(function (html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      var count = doc.querySelectorAll('.project-card').length;
+      if (!count) return;
+      targets.forEach(function (el) {
+        el.textContent = count;
+      });
+    })
+    .catch(function () {});
+})();
+
 // Stamp the current year into any [data-year] element.
 (function currentYear() {
   var year = String(new Date().getFullYear());
