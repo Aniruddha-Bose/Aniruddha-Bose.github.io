@@ -3,6 +3,18 @@
 
 var ARTICLES = [
   {
+    url: 'spooky-pumpkin.html',
+    category: 'Robotics',
+    title: 'Spooky Pumpkin — My Entry for the Playto Labs Robo Halloween Challenge 2026',
+    excerpt:
+      'A pumpkin that comes to life when someone walks past: an IR sensor, glowing green LED eyes, and a cackling laugh played by Python, PySerial and Pygame.',
+    image: '../assets/img/spooky-pumpkin.jpg',
+    tags: ['Robotics', 'Electronics', 'Python', 'Coding', 'Halloween'],
+    published: '2026-11-01',
+    date: 'November 1, 2026',
+    readTime: '4 min read',
+  },
+  {
     url: 'fly-connectome.html',
     category: 'Neuroscience',
     title: '166,000 Neurons, 125 Million Connections: Mapping a Fly’s Brain with AI',
@@ -76,6 +88,7 @@ var TOPICS = [
   'Neuroscience',
   'AI',
   'Coding',
+  'Robotics',
   'Game Dev',
   'Fiction',
 ];
