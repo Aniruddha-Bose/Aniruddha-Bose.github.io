@@ -295,26 +295,45 @@ h1, h2, h3, h4, h5, h6 {
   .navbar .menu-toggle {
     display: flex;
   }
+  /* Compact dropdown box under the menu button, sized to its links. */
   .navbar .nav-links {
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    max-width: 300px;
-    height: 100vh;
-    background: var(--background-light);
+    top: 4.25rem;
+    right: 1rem;
+    min-width: 200px;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    transition: right 0.3s ease;
-    box-shadow: -10px 0 30px rgba(var(--shadow-rgb), 0.5);
+    gap: 0.15rem;
+    padding: 0.5rem;
+    background: var(--card-bg);
+    border: 1px solid rgba(var(--tint-rgb), 0.1);
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(var(--shadow-rgb), 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transform-origin: top right;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
   }
   .navbar .nav-links.open {
-    right: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
   .navbar .nav-links a {
-    font-size: 1.2rem;
+    display: block;
+    padding: 0.65rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+  .navbar .nav-links a::after {
+    display: none;
+  }
+  .navbar .nav-links a:hover {
+    background: rgba(var(--tint-rgb), 0.06);
+  }
+  .navbar .nav-links a.active {
+    color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.1);
   }
 }
 

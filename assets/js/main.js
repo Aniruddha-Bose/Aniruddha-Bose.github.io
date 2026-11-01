@@ -44,17 +44,25 @@
   var links = document.querySelector('.nav-links');
   if (!toggle || !links) return;
 
+  function close() {
+    toggle.classList.remove('active');
+    links.classList.remove('open');
+  }
+
   toggle.addEventListener('click', function () {
     toggle.classList.toggle('active');
     links.classList.toggle('open');
   });
 
-  // Close the menu when a link is tapped.
+  // Close the menu when a link is tapped, on a tap outside it, or on Escape.
   links.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      toggle.classList.remove('active');
-      links.classList.remove('open');
-    });
+    link.addEventListener('click', close);
+  });
+  document.addEventListener('click', function (e) {
+    if (!links.contains(e.target) && !toggle.contains(e.target)) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') close();
   });
 })();
 
