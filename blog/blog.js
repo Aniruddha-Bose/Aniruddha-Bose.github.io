@@ -1,9 +1,11 @@
 // Science Explorer Blog: article data + search/filter rendering.
-// To add an article: create its HTML page in this folder and add an entry below.
+// To add an article: create its HTML page in this folder and add an entry below,
+// with a `section` of 'Science', 'Projects' or 'Stories'.
 
 var ARTICLES = [
   {
     url: 'spooky-pumpkin.html',
+    section: 'Projects',
     category: 'Robotics',
     title: 'Spooky Pumpkin: My Entry for the Playto Labs Robo Halloween Challenge 2026',
     excerpt:
@@ -16,6 +18,7 @@ var ARTICLES = [
   },
   {
     url: 'fly-connectome.html',
+    section: 'Science',
     category: 'Neuroscience',
     title: '166,000 Neurons, 125 Million Connections: Mapping a Fly’s Brain with AI',
     excerpt:
@@ -28,6 +31,7 @@ var ARTICLES = [
   },
   {
     url: 'pixelrift.html',
+    section: 'Projects',
     category: 'Game Dev',
     title: 'PixelRift: Building My Own Indie Game from Scratch',
     excerpt:
@@ -40,6 +44,7 @@ var ARTICLES = [
   },
   {
     url: 'elarion.html',
+    section: 'Stories',
     category: 'Fiction',
     title: 'The Shadow of Elarion',
     excerpt:
@@ -52,6 +57,7 @@ var ARTICLES = [
   },
   {
     url: 'black-holes.html',
+    section: 'Science',
     category: 'Black Holes',
     title: 'Black Holes: Where the Universe Breaks Its Own Rules',
     excerpt:
@@ -64,6 +70,7 @@ var ARTICLES = [
   },
   {
     url: 'minimalia.html',
+    section: 'Projects',
     category: 'Coding',
     title: 'Minimalia: A Minimalist Web Browser',
     excerpt:
@@ -76,22 +83,10 @@ var ARTICLES = [
   },
 ];
 
-// Topic filters shown as pills. "All Topics" is always first.
-var TOPICS = [
-  'All Topics',
-  'Black Holes',
-  'Stars',
-  'Cosmology',
-  'India in Space',
-  'Physics',
-  'Solar System',
-  'Neuroscience',
-  'AI',
-  'Coding',
-  'Robotics',
-  'Game Dev',
-  'Fiction',
-];
+// Broad sections shown as filter pills. Each article picks one with its `section` field;
+// a section only shows up once at least one article uses it. Specific topics still live
+// in each article's category/tags, which the search box matches.
+var TOPICS = ['All', 'Science', 'Projects', 'Stories'];
 
 // Placeholder shown when an article has no image (a minimalist browser glyph).
 var PLACEHOLDER_SVG =
@@ -108,7 +103,7 @@ var CALENDAR_SVG =
 var CLOCK_SVG =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
 
-var state = { topic: 'All Topics', query: '', sort: 'newest' };
+var state = { topic: 'All', query: '', sort: 'newest' };
 
 // ISO date strings (YYYY-MM-DD) sort correctly with plain string comparison,
 // so we can order by publish date without constructing Date objects.
@@ -137,11 +132,7 @@ function escapeHtml(text) {
 }
 
 function matchesFilters(article) {
-  if (state.topic !== 'All Topics') {
-    var inCategory = article.category === state.topic;
-    var inTags = article.tags.indexOf(state.topic) !== -1;
-    if (!inCategory && !inTags) return false;
-  }
+  if (state.topic !== 'All' && article.section !== state.topic) return false;
   var q = state.query.trim().toLowerCase();
   if (q) {
     var haystack = (
@@ -205,7 +196,15 @@ function render() {
 
 function buildFilters() {
   var container = document.getElementById('blog-filters');
-  container.innerHTML = TOPICS.map(function (topic) {
+  var used = TOPICS.filter(function (topic) {
+    return (
+      topic === 'All' ||
+      ARTICLES.some(function (a) {
+        return a.section === topic;
+      })
+    );
+  });
+  container.innerHTML = used.map(function (topic) {
     var active = topic === state.topic ? ' active' : '';
     return (
       '<button type="button" class="filter-pill' + active + '" data-topic="' +
