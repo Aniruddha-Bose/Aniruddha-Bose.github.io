@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20261101j" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20261104b" />
     <meta name="theme-color" content="#6366f1" />
   </head>
   <body>
@@ -44,50 +44,90 @@
           <h2 class="section-title">My Projects</h2>
           <p class="section-subtitle">Some things I've built and worked on</p>
 
-          <div class="project-grid">
-            <article class="project-card">
-              <div class="project-image"><img src="assets/img/minimalia.png" alt="Minimalia logo" /></div>
-              <div class="project-content">
-                <h3 class="project-title">Minimalia</h3>
-                <p class="project-description">A minimalist browser designed to provide a cleaner, calmer, and distraction-free way to experience the web.</p>
-                <div class="tags">
-                  <span class="tag">Coding</span>
-                  <span class="tag">Python</span>
-                  <span class="tag">App Development</span>
-                  <span class="tag">Minimalism</span>
-                </div>
-                <a href="blog/minimalia.html" class="project-link">Read More &rarr;</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-image"><img class="pixel" src="assets/img/pixelrift.jpg" alt="PixelRift title art" /></div>
-              <div class="project-content">
-                <h3 class="project-title">PixelRift</h3>
-                <p class="project-description">A 2D pixel-art platformer built in Python and Pygame, with levels that keep introducing new mechanics. Coming to Steam in December 2026.</p>
-                <div class="tags">
-                  <span class="tag">Game Dev</span>
-                  <span class="tag">Python</span>
-                  <span class="tag">Pygame</span>
-                  <span class="tag">Pixel Art</span>
-                </div>
-                <a href="blog/pixelrift.html" class="project-link">Read More &rarr;</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-image"><div class="image-placeholder"><span class="project-number">03</span></div></div>
-              <div class="project-content">
-                <h3 class="project-title">Personal Website</h3>
-                <p class="project-description">This website! Built to showcase my skills and projects to the world.</p>
-                <div class="tags">
-                  <span class="tag">HTML</span>
-                  <span class="tag">CSS</span>
-                  <span class="tag">Web Development</span>
-                </div>
-              </div>
-            </article>
+          <div class="search-wrap">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="project-search" class="search-input" placeholder="Search projects..." aria-label="Search projects" autocomplete="off" />
           </div>
+          <div class="filters" id="project-filters">
+            <button type="button" class="filter-pill active" data-group="all">All</button>
+            <button type="button" class="filter-pill" data-group="open-source">Open Source</button>
+            <button type="button" class="filter-pill" data-group="closed-source">Closed Source</button>
+            <button type="button" class="filter-pill" data-group="competitions">Competitions</button>
+          </div>
+
+          <div class="project-group" data-group="open-source">
+            <h3 class="group-title">Open Source</h3>
+            <p class="group-empty">Nothing here yet.</p>
+          </div>
+
+          <div class="project-group" data-group="closed-source">
+            <h3 class="group-title">Closed Source</h3>
+            <div class="project-grid">
+              <article class="project-card">
+                <div class="project-image"><img src="assets/img/minimalia.png" alt="Minimalia logo" /></div>
+                <div class="project-content">
+                  <h3 class="project-title">Minimalia</h3>
+                  <p class="project-description">A minimalist browser designed to provide a cleaner, calmer, and distraction-free way to experience the web.</p>
+                  <div class="tags">
+                    <span class="tag">Coding</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">App Development</span>
+                    <span class="tag">Minimalism</span>
+                  </div>
+                  <a href="blog/minimalia.html" class="project-link">Read More &rarr;</a>
+                </div>
+              </article>
+  
+              <article class="project-card">
+                <div class="project-image"><img class="pixel" src="assets/img/pixelrift.jpg" alt="PixelRift title art" /></div>
+                <div class="project-content">
+                  <h3 class="project-title">PixelRift</h3>
+                  <p class="project-description">A 2D pixel-art platformer built in Python and Pygame, with levels that keep introducing new mechanics. Coming to Steam in December 2026.</p>
+                  <div class="tags">
+                    <span class="tag">Game Dev</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Pygame</span>
+                    <span class="tag">Pixel Art</span>
+                  </div>
+                  <a href="blog/pixelrift.html" class="project-link">Read More &rarr;</a>
+                </div>
+              </article>
+  
+              <article class="project-card">
+                <div class="project-image"><div class="image-placeholder"><span class="project-number">03</span></div></div>
+                <div class="project-content">
+                  <h3 class="project-title">Personal Website</h3>
+                  <p class="project-description">This website! Built to showcase my skills and projects to the world.</p>
+                  <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">Web Development</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="project-group" data-group="competitions">
+            <h3 class="group-title">Competitions</h3>
+            <div class="project-grid">
+              <article class="project-card">
+                <div class="project-image"><img class="photo-top" src="assets/img/spooky-pumpkin.jpg" alt="The Spooky Pumpkin, an orange paper-lantern jack-o'-lantern" /></div>
+                <div class="project-content">
+                  <h3 class="project-title">Spooky Pumpkin</h3>
+                  <p class="project-description">My entry for the Playto Labs Robo Halloween Challenge 2026. An IR sensor spots people walking past, then the pumpkin's green LED eyes light up and it cackles at them.</p>
+                  <div class="tags">
+                    <span class="tag">Robotics</span>
+                    <span class="tag">Electronics</span>
+                    <span class="tag">Python</span>
+                  </div>
+                  <a href="blog/spooky-pumpkin.html" class="project-link">Read More &rarr;</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p class="group-empty" id="project-no-results" hidden>No projects match your search.</p>
         </div>
       </section>
     </main>
@@ -123,6 +163,7 @@
       </div>
     </footer>
 
-    <script src="assets/js/main.js?v=20261101j"></script>
+    <script src="assets/js/main.js?v=20261104b"></script>
+    <script src="assets/js/projects.js?v=20261104b"></script>
   </body>
 </html>

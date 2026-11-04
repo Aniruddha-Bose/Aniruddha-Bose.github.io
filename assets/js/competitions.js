@@ -1,16 +1,23 @@
-// Competitions page — live search across both areas.
-// Matches against each competition's name, details and year; hides empty year groups.
+// Competitions page: live search plus an All / Participated / Won filter.
+// Search matches each competition's name, details and year; hides empty year groups.
 
 (function () {
   var input = document.getElementById('competition-search');
   if (!input) return;
 
   var areas = document.querySelectorAll('.competition-area');
+  var grid = document.querySelector('.competitions-grid');
+  var pills = document.querySelectorAll('#competition-filters .filter-pill');
+  var current = 'all';
 
   function filter() {
     var terms = input.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
 
+    // With one area picked, let it use the full width.
+    grid.classList.toggle('single', current !== 'all');
+
     areas.forEach(function (area) {
+      area.hidden = current !== 'all' && area.dataset.area !== current;
       var groups = area.querySelectorAll('.year-group');
       if (!groups.length) return; // nothing listed yet — keep the placeholder as is
 
@@ -41,5 +48,14 @@
     });
   }
 
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      current = pill.dataset.area;
+      pills.forEach(function (p) {
+        p.classList.toggle('active', p === pill);
+      });
+      filter();
+    });
+  });
   input.addEventListener('input', filter);
 })();

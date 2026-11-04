@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20261101j" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20261104b" />
     <meta name="theme-color" content="#6366f1" />
   </head>
   <body>
@@ -48,9 +48,14 @@
             <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             <input type="text" id="competition-search" class="search-input" placeholder="Search competitions..." aria-label="Search competitions" autocomplete="off" />
           </div>
+          <div class="filters" id="competition-filters">
+            <button type="button" class="filter-pill active" data-area="all">All</button>
+            <button type="button" class="filter-pill" data-area="participated">Participated</button>
+            <button type="button" class="filter-pill" data-area="won">Won</button>
+          </div>
 
           <div class="competitions-grid">
-            <div class="competition-area">
+            <div class="competition-area" data-area="participated">
               <h3 class="area-title">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
                 Participated
@@ -71,7 +76,7 @@
               </div>
             </div>
 
-            <div class="competition-area">
+            <div class="competition-area" data-area="won">
               <h3 class="area-title">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
                 Won
@@ -115,7 +120,7 @@
       </div>
     </footer>
 
-    <script src="assets/js/main.js?v=20261101j"></script>
-    <script src="assets/js/competitions.js?v=20261101j"></script>
+    <script src="assets/js/main.js?v=20261104b"></script>
+    <script src="assets/js/competitions.js?v=20261104b"></script>
   </body>
 </html>
