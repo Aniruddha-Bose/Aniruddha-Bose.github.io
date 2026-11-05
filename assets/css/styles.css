@@ -2074,6 +2074,62 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1rem;
   line-height: 1.4;
 }
+.blog-post .snapshot dd a {
+  color: var(--accent-color);
+}
+.blog-post .snapshot dd a:hover {
+  text-decoration: underline;
+}
+
+/* Side-by-side "Normal vs Dyslexia Mode" demo (NoteAble). Panels look like a
+   note on cream paper in both themes, so the letter colours stay readable. */
+.blog-post .compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.blog-post .compare-panel {
+  padding: 1.1rem 1.25rem;
+  background: #fdf8e8;
+  border: 1px solid rgba(var(--tint-rgb), 0.1);
+  border-radius: 14px;
+}
+.blog-post .compare-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+.blog-post .body .compare-text {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.blog-post .body .compare-text.dyslexia-mode {
+  font-family: Verdana, 'Segoe UI', sans-serif;
+  letter-spacing: 0.08em;
+  word-spacing: 0.3em;
+  line-height: 1.9;
+}
+.blog-post .compare .panel-credit {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+.l-b { color: #2563eb; }
+.l-d { color: #059669; }
+.l-p { color: #db2777; }
+.l-q { color: #d97706; }
+@media (max-width: 640px) {
+  .blog-post .compare {
+    grid-template-columns: 1fr;
+  }
+}
+
 .blog-post .social-btns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

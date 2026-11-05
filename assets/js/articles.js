@@ -4,6 +4,19 @@
 
 var ARTICLES = [
   {
+    url: 'noteable.html',
+    section: 'Projects',
+    category: 'Accessibility',
+    title: 'Building NoteAble: A Study App That Adapts to Dyslexic Learners',
+    excerpt:
+      'Our entry for Samsung Solve for Tomorrow 2026: a note-taking web app that reads aloud, forgives spelling, and lets every learner choose how their notes look.',
+    image: '../assets/img/noteable.png',
+    tags: ['Accessibility', 'Web App', 'JavaScript', 'Firebase', 'AI'],
+    published: '2026-11-05',
+    date: 'November 5, 2026',
+    readTime: '7 min read',
+  },
+  {
     url: 'spooky-pumpkin.html',
     section: 'Projects',
     category: 'Robotics',

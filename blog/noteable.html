@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex, noai, noimageai" />
+    <script>try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){}</script>
+    <title>Building NoteAble: A Study App That Adapts to Dyslexic Learners | Aniruddha Bose</title>
+    <meta name="description" content="How two friends and I built NoteAble, a note-taking web app for dyslexic learners that reads aloud, forgives spelling and lets every learner choose how their notes look." />
+    <meta name="keywords" content="NoteAble, dyslexia, accessibility, study app, note-taking, web app, Firebase, Gemini, PWA" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20261105d" />
+    <meta name="theme-color" content="#6366f1" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.html" class="logo">Aniruddha Bose</a>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../skills.html">Skills</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="index.html" class="active">Blog</a></li>
+          <li><a href="../hobbies.html">Hobbies</a></li>
+          <li><a href="../competitions.html">Competitions</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" type="button" aria-label="Switch to light mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <section class="blog-post">
+        <article class="container">
+          <a href="index.html" class="back-link">&larr; Back to Blog</a>
+
+          <header class="header">
+            <div class="meta">
+              <span>November 5, 2026</span>
+              <span class="dot">&bull;</span>
+              <span>7 min read</span>
+            </div>
+            <h1 class="post-title">Building NoteAble: A Study App That Adapts to Dyslexic Learners</h1>
+            <p class="post-subtitle">
+              How two friends and I built a note-taking app that reads aloud, forgives spelling, and lets every learner choose how their notes look.
+            </p>
+            <div class="tags">
+              <span class="tag">Accessibility</span>
+              <span class="tag">Web App</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">AI</span>
+            </div>
+          </header>
+
+          <div class="body">
+            <img class="post-hero" src="../assets/img/noteable.png" alt="The NoteAble app icon" width="800" height="500" />
+
+            <dl class="snapshot">
+              <div><dt>Team</dt><dd>Aniruddha Bose, [Teammate 1], [Teammate 2]</dd></div>
+              <div><dt>What it is</dt><dd>An installable web app for taking and studying notes</dd></div>
+              <div><dt>Built with</dt><dd>HTML, CSS, JavaScript, Firebase, Gemini and on-device AI</dd></div>
+              <div><dt>Try it</dt><dd><a href="https://noteable-study.pages.dev" target="_blank" rel="noopener noreferrer">noteable-study.pages.dev</a></dd></div>
+            </dl>
+
+            <h2>The Problem</h2>
+            <p class="lead">
+              Most note-taking tools quietly assume you can read quickly, spell confidently and keep up with a teacher who talks faster than you can write.
+            </p>
+            <p>
+              For students with dyslexia (often estimated at around one in ten people), each of those is a barrier. And the usual advice is basically &ldquo;try harder&rdquo;: work at adapting yourself to the material. We wanted the app to do the adapting instead, so NoteAble&rsquo;s tagline ended up being the rule we designed everything around.
+            </p>
+
+            <div class="callout">
+              <div class="callout-lbl">Our design rule</div>
+              <p><strong>NoteAble adapts information instead of asking you to adapt to it.</strong></p>
+            </div>
+
+            <p>
+              NoteAble is a web app that turns classes, slides and reading into notes that are easier to read, hear and remember. I built it with two friends, [Teammate 1] and [Teammate 2], as our entry for Samsung Solve for Tomorrow 2026.
+            </p>
+
+            <figure class="compare">
+              <div class="compare-panel">
+                <span class="compare-label">Normal</span>
+                <p class="compare-text">Plants use photosynthesis to make food from sunlight.</p>
+              </div>
+              <div class="compare-panel">
+                <span class="compare-label">Dyslexia Mode</span>
+                <p class="compare-text dyslexia-mode"><span class="l-p">P</span>lants use <span class="l-p">p</span>ho&middot;to&middot;syn&middot;the&middot;sis to make foo<span class="l-d">d</span> from sunlight.</p>
+              </div>
+              <figcaption class="panel-credit">
+                The same sentence with Dyslexia Mode on: more space between letters and words, syllable breaks in long words, and separate colours for b, d, p and q.
+              </figcaption>
+            </figure>
+
+            <h2>What It Does</h2>
+
+            <h3>Capture</h3>
+            <p>
+              You can record a class and get live captions, take a photo of a whiteboard or a textbook page, import a PDF or Word file, or just draw your ideas on a sketchpad. The AI turns any of these into a structured note: the key idea, the important points, and the key words with plain meanings.
+            </p>
+
+            <h3>Read</h3>
+            <p>Every note can be shown in whatever way works for you:</p>
+            <ul>
+              <li>Clearer fonts (Atkinson Hyperlegible, OpenDyslexic, Lexend and others), with adjustable letter, word, line and paragraph spacing</li>
+              <li>Background tints, a focus ruler and a high-contrast mode</li>
+              <li>Syllable breaks, and separate colours for b, d, p and q, the letters that get flipped most easily</li>
+              <li>Read-aloud, with each word highlighted as it&rsquo;s spoken</li>
+              <li>Tap any word to hear it and see a one-line meaning and a picture</li>
+            </ul>
+
+            <h3>Write</h3>
+            <p>
+              Speak-to-write lets you dictate a note and have it tidied into clear sentences. The spelling help understands sound-it-out spelling, so <em>becuz</em> suggests &ldquo;because&rdquo;, and you can hear each suggestion before you pick it. Search is forgiving too: searching <em>fotosinthesis</em> still finds your photosynthesis note.
+            </p>
+
+            <h3>Study</h3>
+            <p>
+              With one tap you can simplify a hard paragraph, break it into steps, get an everyday example, take a quiz, make flashcards with pictures, or see it as a visual map. There&rsquo;s also a deadlines page that counts down to homework and sends reminders, since keeping track of time is something a lot of dyslexic students struggle with.
+            </p>
+
+            <h3>Choose</h3>
+            <p>
+              A Simplified view shows only the essentials, with fewer buttons and less text on every page. Quick presets like Dyslexia Mode turn on a sensible set of reading aids in one go.
+            </p>
+
+            <h2>Principles We Kept Coming Back To</h2>
+            <ul>
+              <li><strong>Privacy first.</strong> Notes and recordings stay on the device. Text only goes to an AI when the student asks for help, and there&rsquo;s an on-device AI option that never sends anything anywhere. API keys are never synced or exported.</li>
+              <li><strong>Choice over one-size-fits-all.</strong> Dyslexia affects everyone differently, so almost everything is a setting. Presets mean nobody has to flip twenty switches just to get started, though.</li>
+              <li><strong>Fewer interruptions.</strong> Pop-ups are tiring when reading already takes effort. NoteAble shows at most one suggestion a day, and the only exceptions are urgent things like deadline reminders.</li>
+              <li><strong>Everything can be heard.</strong> Any text, anywhere in the app, can be selected and read aloud.</li>
+            </ul>
+
+            <h2>How It&rsquo;s Built</h2>
+            <p>
+              NoteAble is plain HTML, CSS and JavaScript with no build step, split into numbered scripts that load in order. Keeping it simple meant any of us could open a file and understand what it did.
+            </p>
+            <ul>
+              <li><strong>Accounts and sync:</strong> Firebase Authentication and Firestore, protected with App Check, so notes, settings and deadlines stay in step across devices.</li>
+              <li><strong>AI:</strong> students can use NoteAble AI (Gemini through Firebase AI Logic, no setup needed), bring their own key for Claude, ChatGPT or Gemini, or run the AI entirely on their own device with Chrome&rsquo;s built-in AI or WebLLM.</li>
+              <li><strong>Speech:</strong> the browser&rsquo;s speech recognition handles live captions, with an on-device Whisper option for privacy.</li>
+              <li><strong>Installable app:</strong> it works as a Progressive Web App, opens offline, and shows reminders as system notifications once it&rsquo;s installed.</li>
+              <li><strong>Storage:</strong> recordings and photos live in the browser&rsquo;s IndexedDB, and notes can be backed up as .ntnotes files or downloaded together as a zip.</li>
+            </ul>
+
+            <h2>Challenges</h2>
+
+            <h3>Hour-long classes</h3>
+            <p>
+              Browser speech recognition tends to just stop after a while, which ruined long recordings. So we made it restart automatically, save the transcript as it goes, keep the screen awake, and recover the recording if the page closes. Really long transcripts were also too big for the AI to read in one go, so NoteAble summarises them in parts first and then writes the note from those summaries.
+            </p>
+
+            <h3>Free AI limits</h3>
+            <p>
+              The free tier only allows a few requests a minute. Tapping through words or pressing a few buttons quickly sent bursts of requests and caused errors. We added a pacer that spaces requests out, a shared cool-down for when the AI is busy, and a Stop button that actually cancels a request instead of just hiding it.
+            </p>
+
+            <h3>Spelling help that gets how dyslexic students spell</h3>
+            <p>
+              A normal spell checker struggles with <em>fizix</em> or <em>becuz</em>, because the letters are too far from the real word. We turn words into rough sound-alike forms first (so &ldquo;ph&rdquo; and &ldquo;f&rdquo; count as the same, and &ldquo;-tion&rdquo; sounds like &ldquo;shun&rdquo;) and then compare those. We tested it on 37 real sound-it-out misspellings, and the intended word was in the top three suggestions for 35 of them.
+            </p>
+
+            <h3>Not reinventing security</h3>
+            <p>
+              An early version locked each account&rsquo;s email address with the user&rsquo;s password. That broke sign-in as soon as someone reset their password. Lesson learned: use the platform&rsquo;s built-in, well-tested sign-in flows instead of inventing clever ones.
+            </p>
+
+            <h2>What I Learned</h2>
+            <ul>
+              <li>Accessibility is mostly about getting rid of small annoyances: a button in the wrong place, a word you can&rsquo;t hear, a pop-up at the wrong moment.</li>
+              <li>Every feature costs screen space and attention. Some of our best changes removed buttons instead of adding them.</li>
+              <li>Rate limits, flaky speech recognition and offline use turned out to matter as much as any feature, because they decide whether a student trusts the app in class.</li>
+              <li>Working in a team of three taught me to keep code readable and write decisions down, so the others could pick things up.</li>
+            </ul>
+
+            <h2>What&rsquo;s Next</h2>
+            <p>
+              The most important next step is testing NoteAble with dyslexic students for a few weeks and changing it based on what they actually find helpful. After that, we&rsquo;d like to add a personal word bank that turns the words you look up into flashcards.
+            </p>
+            <p>NoteAble was built by Aniruddha Bose, [Teammate 1] and [Teammate 2].</p>
+
+            <div class="cta">
+              <div class="cta-eye">Try it yourself</div>
+              <h2>Want to see how it works? Open NoteAble and try Dyslexia Mode.</h2>
+              <div class="cta-btns">
+                <a href="https://noteable-study.pages.dev" class="cta-button" target="_blank" rel="noopener noreferrer">Open NoteAble &rarr;</a>
+                <a href="index.html" class="btn-outline">More Articles</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content">
+          <div class="branding">
+            <h3 class="name">Aniruddha Bose</h3>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/Aniruddha-Bose" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="mailto:aniruddha.bose@example.com" class="social-link" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="copyright">
+          <p>&copy; <span data-year></span> Aniruddha Bose. All rights reserved.</p>
+          <p class="made-with">
+            Made with
+            <span class="heart"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+            and code
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js?v=20261105d"></script>
+  </body>
+</html>
