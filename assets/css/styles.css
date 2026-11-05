@@ -646,6 +646,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.8;
   font-size: 1.05rem;
 }
+.about .paragraph a {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+.about .paragraph a:hover {
+  text-decoration: underline;
+}
 .about .highlights {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
