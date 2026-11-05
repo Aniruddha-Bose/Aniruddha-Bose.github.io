@@ -565,6 +565,29 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.85rem;
   color: var(--text-faint);
 }
+/* Gold text with a light sweeping across it, like a sparkle. */
+.about .sparkle-text {
+  font-weight: 700;
+  background: linear-gradient(110deg, #b8860b 0%, #f5c542 35%, #fff6c9 50%, #f5c542 65%, #b8860b 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: sparkle-sweep 2.8s linear infinite;
+}
+[data-theme='light'] .about .sparkle-text {
+  background-image: linear-gradient(110deg, #8a6200 0%, #c79100 35%, #f2c94c 50%, #c79100 65%, #8a6200 100%);
+}
+@keyframes sparkle-sweep {
+  from { background-position: 100% 0; }
+  to { background-position: -150% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about .sparkle-text {
+    animation: none;
+    background-position: 50% 0;
+  }
+}
 .about .highlight-more {
   margin-top: 0.35rem;
   font-size: 0.8rem;
