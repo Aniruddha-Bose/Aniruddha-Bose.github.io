@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20261105a" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20261105b" />
     <meta name="theme-color" content="#6366f1" />
   </head>
   <body>
@@ -68,7 +68,54 @@
             </div>
           </div>
         </div>
+      </section>
 
+      <!-- Newest project, article and competition. The content below is a fallback;
+           assets/js/home.js swaps in whatever is newest on the live site. -->
+      <section class="latest" id="latest">
+        <div class="container">
+          <h2 class="latest-heading">Latest</h2>
+          <div class="latest-grid">
+            <article class="latest-card" data-kind="project">
+              <a class="latest-media" href="blog/spooky-pumpkin.html" tabindex="-1" aria-hidden="true"><img class="photo-top" src="assets/img/spooky-pumpkin.jpg" alt="" /></a>
+              <div class="latest-body">
+                <p class="latest-kicker">Latest project</p>
+                <h3 class="latest-title">Spooky Pumpkin</h3>
+                <p class="latest-text">My entry for the Playto Labs Robo Halloween Challenge 2026. An IR sensor spots people walking past, then the pumpkin's green LED eyes light up and it cackles at them.</p>
+                <div class="latest-actions">
+                  <a class="latest-view" href="blog/spooky-pumpkin.html">View project</a>
+                  <a class="latest-all" href="projects.html">All projects</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="latest-card" data-kind="article">
+              <a class="latest-media" href="blog/spooky-pumpkin.html" tabindex="-1" aria-hidden="true"><img class="photo-top" src="assets/img/spooky-pumpkin.jpg" alt="" /></a>
+              <div class="latest-body">
+                <p class="latest-kicker">Latest article</p>
+                <h3 class="latest-title">Spooky Pumpkin: My Entry for the Playto Labs Robo Halloween Challenge 2026</h3>
+                <p class="latest-text">A paper pumpkin with an IR sensor inside. When someone walks by, its green LED eyes light up and it cackles at them, with Python, PySerial and Pygame handling the sound.</p>
+                <div class="latest-actions">
+                  <a class="latest-view" href="blog/spooky-pumpkin.html">Read article</a>
+                  <a class="latest-all" href="blog/index.html">All articles</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="latest-card" data-kind="competition">
+              <a class="latest-media" href="blog/spooky-pumpkin.html" tabindex="-1" aria-hidden="true"><img class="photo-top" src="assets/img/spooky-pumpkin.jpg" alt="" /></a>
+              <div class="latest-body">
+                <p class="latest-kicker">Latest competition &middot; Participated</p>
+                <h3 class="latest-title">Playto Labs Robo-Halloween Challenge 2026</h3>
+                <p class="latest-text">Entry: Spooky Pumpkin</p>
+                <div class="latest-actions">
+                  <a class="latest-view" href="blog/spooky-pumpkin.html">View entry</a>
+                  <a class="latest-all" href="competitions.html">All competitions</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -103,6 +150,8 @@
       </div>
     </footer>
 
-    <script src="assets/js/main.js?v=20261105a"></script>
+    <script src="assets/js/main.js?v=20261105b"></script>
+    <script src="assets/js/articles.js?v=20261105b"></script>
+    <script src="assets/js/home.js?v=20261105b"></script>
   </body>
 </html>
