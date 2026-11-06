@@ -1132,6 +1132,10 @@ h1, h2, h3, h4, h5, h6 {
 .competitions .competition-meta a {
   color: var(--accent-color);
 }
+.competitions .competition-placing {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
 .competitions .competition-empty {
   color: var(--text-faint);
   font-size: 0.95rem;

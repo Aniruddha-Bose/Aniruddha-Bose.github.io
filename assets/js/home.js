@@ -104,13 +104,16 @@
         return fromBlog(a.url) === href;
       })[0];
       var own = el.dataset.image;
+      var placing = el.querySelector('.competition-placing');
+      var text = el.querySelector('.competition-meta').textContent;
+      if (placing) text += ' · ' + placing.textContent;
       fill(cards.competition, {
         href: href,
         image: own || (match ? fromBlog(match.image) : 'favicon.svg'),
         imageClass: own ? '' : 'photo-top',
         kicker: 'Latest competition · ' + result,
         title: el.querySelector('.competition-name').textContent,
-        text: el.querySelector('.competition-meta').textContent,
+        text: text,
       });
     })
     .catch(function () {});
