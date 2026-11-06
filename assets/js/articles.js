@@ -7,7 +7,7 @@ var ARTICLES = [
     url: 'noteable.html',
     section: 'Projects',
     category: 'Accessibility',
-    title: 'Building NoteAble: A Study App That Adapts to Dyslexic Learners',
+    title: 'NoteAble: A Dyslexia-Friendly Study App',
     excerpt:
       'Our entry for Samsung Solve for Tomorrow 2026: a note-taking web app that reads aloud, forgives spelling, and lets every learner choose how their notes look.',
     image: '../assets/img/noteable.png',
