@@ -65,7 +65,7 @@ var ARTICLES = [
     image: '../assets/book/elarion/page-01.jpg',
     tags: ['Fiction', 'Fantasy', 'Short Story', 'Writing'],
     published: '2026-07-11',
-    date: 'July 2026',
+    date: 'July 11, 2026',
     readTime: '18 pages',
   },
   {
