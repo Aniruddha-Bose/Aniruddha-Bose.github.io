@@ -1060,12 +1060,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 .competitions .competitions-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   align-items: start;
 }
 .competitions .competitions-grid.single {
   grid-template-columns: 1fr;
+}
+@media (max-width: 968px) {
+  .competitions .competitions-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .competitions .competition-area {
   background: var(--card-bg);

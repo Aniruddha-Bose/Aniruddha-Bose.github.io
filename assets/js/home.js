@@ -96,7 +96,8 @@
       if (!latest) return;
       var el = latest.el;
       var area = el.closest('.competition-area');
-      var result = area && area.dataset.area === 'won' ? 'Won' : 'Participated';
+      var results = { won: 'Won', finalist: 'Finalist' };
+      var result = (area && results[area.dataset.area]) || 'Participated';
       var entry = el.querySelector('.competition-meta a');
       var href = entry ? entry.getAttribute('href') : 'competitions.html';
       var match = (window.ARTICLES || []).filter(function (a) {
