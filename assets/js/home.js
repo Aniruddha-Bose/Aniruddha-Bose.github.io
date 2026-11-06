@@ -84,7 +84,8 @@
     })
     .catch(function () {});
 
-  // Latest competition (won or participated); its picture comes from the entry's article.
+  // Latest competition (won or participated). Its picture is the item's own data-image
+  // if it has one, otherwise the entry article's image.
   fetchPage('competitions.html')
     .then(function (doc) {
       var items = [];
@@ -101,10 +102,11 @@
       var match = (window.ARTICLES || []).filter(function (a) {
         return fromBlog(a.url) === href;
       })[0];
+      var own = el.dataset.image;
       fill(cards.competition, {
         href: href,
-        image: match ? fromBlog(match.image) : 'favicon.svg',
-        imageClass: 'photo-top',
+        image: own || (match ? fromBlog(match.image) : 'favicon.svg'),
+        imageClass: own ? '' : 'photo-top',
         kicker: 'Latest competition · ' + result,
         title: el.querySelector('.competition-name').textContent,
         text: el.querySelector('.competition-meta').textContent,
