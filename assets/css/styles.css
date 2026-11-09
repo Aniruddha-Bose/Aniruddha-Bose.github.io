@@ -893,9 +893,39 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 8px 24px rgba(var(--shadow-rgb), 0.12);
 }
 .projects .project-image {
+  position: relative;
   height: 200px;
   overflow: hidden;
 }
+/* Status badge over the top-left of the card image; the dot colour shows the status. */
+.projects .project-badge {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.projects .project-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.projects .project-badge.released::before { background: #22c55e; }
+.projects .project-badge.upcoming::before { background: #f59e0b; }
+.projects .project-badge.finalist::before { background: #facc15; }
+.projects .project-badge.entry::before { background: #38bdf8; }
 .projects .project-image img {
   width: 100%;
   height: 100%;
@@ -967,6 +997,20 @@ h1, h2, h3, h4, h5, h6 {
 .projects .project-link:hover {
   color: var(--secondary-color);
   transform: translateX(5px);
+}
+.projects .project-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1.25rem;
+}
+.projects .project-link.external {
+  color: var(--accent-color);
+}
+.projects .project-link.external:hover {
+  color: var(--text-primary);
+  transform: none;
+  text-decoration: underline;
 }
 @media (max-width: 768px) {
   .projects .project-grid {
