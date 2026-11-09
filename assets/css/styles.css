@@ -2119,8 +2119,8 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
-/* Side-by-side "Normal vs Dyslexia Mode" demo (NoteAble). Panels look like a
-   note on cream paper in both themes, so the letter colours stay readable. */
+/* Side-by-side "Normal vs Dyslexia Mode" demo (NoteAble), in the same purple
+   panel style as the science articles' stats strip. */
 .blog-post .compare {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2129,9 +2129,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .blog-post .compare-panel {
   padding: 1.1rem 1.25rem;
-  background: #fdf8e8;
-  border: 1px solid rgba(var(--tint-rgb), 0.1);
-  border-radius: 14px;
+  background: rgba(99, 102, 241, 0.06);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
 }
 .blog-post .compare-label {
   display: block;
@@ -2140,11 +2140,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #6b7280;
+  color: var(--accent-color);
 }
 .blog-post .body .compare-text {
   margin: 0;
-  color: #1f2937;
+  color: var(--text-secondary);
   font-size: 1.05rem;
   line-height: 1.7;
 }
@@ -2158,10 +2158,15 @@ h1, h2, h3, h4, h5, h6 {
   grid-column: 1 / -1;
   margin-top: 0;
 }
-.l-b { color: #2563eb; }
-.l-d { color: #059669; }
-.l-p { color: #db2777; }
-.l-q { color: #d97706; }
+/* b / d / p / q letter colours: lighter on the dark theme, deeper on light. */
+.l-b { color: #60a5fa; }
+.l-d { color: #34d399; }
+.l-p { color: #f472b6; }
+.l-q { color: #fbbf24; }
+[data-theme='light'] .l-b { color: #2563eb; }
+[data-theme='light'] .l-d { color: #059669; }
+[data-theme='light'] .l-p { color: #db2777; }
+[data-theme='light'] .l-q { color: #d97706; }
 @media (max-width: 640px) {
   .blog-post .compare {
     grid-template-columns: 1fr;
