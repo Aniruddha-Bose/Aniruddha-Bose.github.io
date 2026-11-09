@@ -73,6 +73,16 @@
       var el = latest.el;
       var img = el.querySelector('.project-image img');
       var link = el.querySelector('.project-link');
+      // The project's own outside link (Try it / Download / Steam ...), if it has one.
+      var external = el.querySelector('.project-link.external');
+      var tryBtn = cards.project.querySelector('.latest-try');
+      if (tryBtn) {
+        tryBtn.hidden = !external;
+        if (external) {
+          tryBtn.href = external.getAttribute('href');
+          tryBtn.textContent = external.textContent;
+        }
+      }
       fill(cards.project, {
         href: link ? link.getAttribute('href') : 'projects.html',
         image: img ? img.getAttribute('src') : 'favicon.svg',
