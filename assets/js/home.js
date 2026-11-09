@@ -10,7 +10,7 @@
   });
   if (!cards.project) return;
 
-  // Article URLs/images in articles.js are relative to blog/; make them relative to the root.
+  // Article images in articles.js are relative to blog/; make them relative to the root.
   function fromBlog(path) {
     if (/^https?:/.test(path)) return path;
     return path.indexOf('../') === 0 ? path.slice(3) : 'blog/' + path;
@@ -50,7 +50,7 @@
       })
     ).a;
     fill(cards.article, {
-      href: fromBlog(article.url),
+      href: articleUrl(article),
       image: fromBlog(article.image),
       imageClass: 'photo-top',
       kicker: 'Latest article',
@@ -84,7 +84,7 @@
         }
       }
       fill(cards.project, {
-        href: link ? link.getAttribute('href') : 'projects.html',
+        href: link ? link.getAttribute('href') : '/projects',
         image: img ? img.getAttribute('src') : 'favicon.svg',
         imageClass: img ? img.className : '',
         kicker: 'Latest project',
@@ -109,9 +109,9 @@
       var results = { won: 'Won', finalist: 'Finalist' };
       var result = (area && results[area.dataset.area]) || 'Participated';
       var entry = el.querySelector('.competition-meta a');
-      var href = entry ? entry.getAttribute('href') : 'competitions.html';
+      var href = entry ? entry.getAttribute('href') : '/competitions';
       var match = (window.ARTICLES || []).filter(function (a) {
-        return fromBlog(a.url) === href;
+        return articleUrl(a) === href;
       })[0];
       var own = el.dataset.image;
       var placing = el.querySelector('.competition-placing');

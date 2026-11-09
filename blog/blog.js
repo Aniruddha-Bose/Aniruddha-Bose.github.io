@@ -79,7 +79,7 @@ function cardHtml(article) {
     : '<div class="card-placeholder">' + (PLACEHOLDER_ICONS[article.icon] || PLACEHOLDER_SVG) + '</div>';
 
   return (
-    '<a class="post-card" href="' + encodeURI(article.url) + '">' +
+    '<a class="post-card" href="' + encodeURI(articleUrl(article)) + '">' +
     '<div class="card-image">' +
     media +
     '<span class="card-kicker">' + escapeHtml(article.category) + '</span>' +

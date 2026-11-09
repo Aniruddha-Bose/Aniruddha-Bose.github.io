@@ -95,3 +95,8 @@ var ARTICLES = [
     readTime: '6 min read',
   },
 ];
+
+// Clean page address for an article, e.g. 'noteable.html' -> '/blog/noteable'.
+function articleUrl(article) {
+  return '/blog/' + article.url.replace(/\.html$/, '');
+}
