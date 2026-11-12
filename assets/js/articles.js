@@ -1,8 +1,21 @@
 // Blog article data, shared by the blog page (blog/blog.js) and the home page highlights.
 // To add an article: create its HTML page in blog/ and add an entry below, with a
-// `section` of 'Science', 'Projects' or 'Stories'. URLs and images are relative to blog/.
+// `section` of 'Science', 'Tech', 'Projects' or 'Stories'. URLs and images are relative to blog/.
 
 var ARTICLES = [
+  {
+    url: 'online-anonymity.html',
+    section: 'Tech',
+    category: 'Privacy',
+    title: 'Can You Really Be Anonymous on the Internet?',
+    excerpt:
+      'Privacy and anonymity aren’t the same thing. How websites track us, and what Firefox, Linux, VPNs and Tor can and can’t do about it.',
+    image: '../assets/img/online-anonymity.svg',
+    tags: ['Privacy', 'Security', 'Firefox', 'Linux', 'Tor'],
+    published: '2026-11-12',
+    date: 'November 12, 2026',
+    readTime: '8 min read',
+  },
   {
     url: 'noteable.html',
     section: 'Projects',

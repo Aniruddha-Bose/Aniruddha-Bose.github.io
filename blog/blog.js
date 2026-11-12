@@ -4,7 +4,7 @@
 // Broad sections shown as filter pills. Each article picks one with its `section` field;
 // a section only shows up once at least one article uses it. Specific topics still live
 // in each article's category/tags, which the search box matches.
-var TOPICS = ['All', 'Science', 'Projects', 'Stories'];
+var TOPICS = ['All', 'Science', 'Tech', 'Projects', 'Stories'];
 
 // Placeholder shown when an article has no image (a minimalist browser glyph).
 var PLACEHOLDER_SVG =
