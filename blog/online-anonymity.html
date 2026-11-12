@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/styles.css?v=20261112c" />
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20261112d" />
     <meta name="theme-color" content="#6366f1" />
   </head>
   <body>
@@ -48,7 +48,7 @@
             <div class="meta">
               <span>November 12, 2026</span>
               <span class="dot">&bull;</span>
-              <span>8 min read</span>
+              <span>9 min read</span>
             </div>
             <h1 class="post-title">Can You Really Be Anonymous on the Internet?</h1>
             <p class="post-subtitle">
@@ -61,6 +61,7 @@
               <span class="tag">Firefox</span>
               <span class="tag">Linux</span>
               <span class="tag">Tor</span>
+              <span class="tag">WhatsApp</span>
             </div>
           </header>
 
@@ -200,19 +201,40 @@
             </p>
             <p>Even so, it&rsquo;s still one of the most important technologies ever built for online anonymity.</p>
 
+            <h2>WhatsApp: Keeping Messages Private</h2>
+            <div class="panel">
+              <div class="panel-media">
+                <img src="../assets/img/whatsapp.jpg" alt="The WhatsApp logo on a green background with outline drawings of chats and icons" width="832" height="406" loading="lazy" />
+                <div class="panel-credit">The WhatsApp logo.</div>
+              </div>
+              <div class="panel-text">
+                <p>Privacy isn&rsquo;t only about browsing. <strong>WhatsApp</strong> is my everyday messaging app, so I wanted to understand how it actually keeps messages private.</p>
+                <p>
+                  WhatsApp uses <strong>end-to-end encryption</strong> by default for personal chats and calls, built on the Signal Protocol. Your message is locked on your phone and can only be unlocked on the other person&rsquo;s phone.
+                </p>
+              </div>
+            </div>
+            <p>
+              The keys that unlock messages stay on the two devices in the chat, so anyone who intercepts a message along the way, including WhatsApp itself, just sees scrambled data. You can even check this for a chat yourself: each conversation has a security code you can compare with your friend&rsquo;s to confirm it&rsquo;s encrypted.
+            </p>
+            <p>
+              There are a few extra settings that help too. Disappearing messages delete chats after a set time, and you can turn on end-to-end encrypted backups so the copies saved to Google Drive or iCloud are protected as well. Backups aren&rsquo;t encrypted that way unless you switch it on.
+            </p>
+            <p>
+              This is a good example of the difference between privacy and anonymity, though. WhatsApp can&rsquo;t read <em>what</em> you say, but your account is tied to your phone number, and it can still see some <em>metadata</em>, like who you message and when. So your messages are private, but you&rsquo;re not anonymous.
+            </p>
+
             <h2>Other Tools That Can Improve Digital Privacy</h2>
-            <p>Beyond browsers, operating systems and VPNs, there are other tools that can cut down how much personal information you expose online.</p>
+            <p>Beyond the browsers, operating systems, VPNs and apps above, a few other tools can cut down how much personal information you expose online.</p>
             <div class="table-wrap">
               <table>
                 <thead>
                   <tr><th>Tool</th><th>What it does</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>Brave Browser</td><td>Blocks many ads and trackers by default</td></tr>
                   <tr><td>DuckDuckGo</td><td>Search without building the usual personalised search profile</td></tr>
                   <tr><td>Proton Mail</td><td>Privacy-focused email with encryption features</td></tr>
-                  <tr><td>Signal / WhatsApp</td><td>End-to-end encrypted messaging</td></tr>
-                  <tr><td>uBlock Origin</td><td>Blocks unwanted network requests, ads and trackers</td></tr>
+                  <tr><td>Signal</td><td>End-to-end encrypted messaging, run by a non-profit and designed to collect as little data about you as possible</td></tr>
                   <tr><td>Bitwarden</td><td>Helps you manage passwords securely</td></tr>
                 </tbody>
               </table>
@@ -291,6 +313,6 @@
       </div>
     </footer>
 
-    <script src="../assets/js/main.js?v=20261112c"></script>
+    <script src="../assets/js/main.js?v=20261112d"></script>
   </body>
 </html>
