@@ -10,7 +10,7 @@ var ARTICLES = [
     title: 'Can You Really Be Anonymous on the Internet?',
     excerpt:
       'Privacy and anonymity aren’t the same thing. How websites track us, and what Firefox, Linux, VPNs and Tor can and can’t do about it.',
-    image: '../assets/img/online-anonymity.svg',
+    image: '../assets/img/online-privacy.jpg',
     tags: ['Privacy', 'Security', 'Firefox', 'Linux', 'Tor'],
     published: '2026-11-12',
     date: 'November 12, 2026',
