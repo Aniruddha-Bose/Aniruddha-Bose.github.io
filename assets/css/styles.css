@@ -939,6 +939,7 @@ h1, h2, h3, h4, h5, h6 {
 .projects .project-badge.upcoming::before { background: #f59e0b; }
 .projects .project-badge.finalist::before { background: #facc15; }
 .projects .project-badge.entry::before { background: #38bdf8; }
+.projects .project-badge.bronze::before { background: #cd7f32; }
 .projects .project-image img {
   width: 100%;
   height: 100%;
@@ -1192,6 +1193,26 @@ h1, h2, h3, h4, h5, h6 {
 .competitions .competition-placing {
   font-weight: 600;
   color: var(--text-secondary);
+}
+/* Bronze medal rank: bronze text with a light sweeping across it (same
+   sparkle-sweep animation as the gold "Always" on the About page). */
+.rank-bronze {
+  font-weight: 800;
+  background: linear-gradient(110deg, #8a5a2b 0%, #cd7f32 35%, #ffd8a8 50%, #cd7f32 65%, #8a5a2b 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: sparkle-sweep 2.8s linear infinite;
+}
+[data-theme='light'] .rank-bronze {
+  background-image: linear-gradient(110deg, #6b4220 0%, #a8642a 35%, #e0a868 50%, #a8642a 65%, #6b4220 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .rank-bronze {
+    animation: none;
+    background-position: 50% 0;
+  }
 }
 .competitions .competition-empty {
   color: var(--text-faint);
